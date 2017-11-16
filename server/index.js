@@ -5,7 +5,7 @@ import { resolve } from 'path'
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3005
-const MIDDLEWARES = ['router']
+const MIDDLEWARES = ['database','router']
 const r = url => resolve(__dirname,url)
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
