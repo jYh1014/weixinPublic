@@ -1,10 +1,12 @@
 import Koa from 'koa'
 import { Nuxt, Builder } from 'nuxt'
-
+import R from 'ramda'
+import { resolve } from 'path'
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
-const port = process.env.PORT || 3000
-
+const port = process.env.PORT || 3005
+const MIDDLEWARES = ['router']
+const r = url => resolve(__dirname,url)
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
@@ -20,6 +22,13 @@ if (config.dev) {
     process.exit(1)
   })
 }
+
+//加入中间件
+R.map(R.compose(
+  R.map(i => i(app)),
+  require,
+  i => `${r('./middlewares')}/${i}`
+))(MIDDLEWARES)
 
 app.use(ctx => {
   // console.log(ctx)
