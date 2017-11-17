@@ -6,7 +6,7 @@ const models = resolve(__dirname,'../database/schema')
 
 fs.readdirSync(models)
 .filter(file => ~file.search(/^[^\.].*js/))
-.forEach(file =>{ console.log(file);require(resolve(models,file))})
+.forEach(file =>require(resolve(models,file)))
 
 export const database = app => {
     mongoose.set('debug',true)
