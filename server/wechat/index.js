@@ -4,7 +4,7 @@ import Wechat from '../wechat-lib'
 import Token from '../database/schema/token'
 
 // const Token = mongoose.model('Token')
-// console.log(Token)
+
 const wechatConfig = {
     wechat: {
         appID: config.wechat.appID,
