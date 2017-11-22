@@ -3,7 +3,16 @@ export default async (ctx,next) => {
    
     const message = ctx.weixin
     console.log(message)
-    if(message.MsgType === 'text'){
+    if(message.MsgType === 'event'){
+        if(message.Event === 'subscribe'){
+            ctx.body = tip
+        }else if(message.Event === 'unsubscribe'){
+            console.log('已取关')
+        }else if(message.Event === 'LOCATION'){
+            ctx.body = message.Latitude + ':' + message.Longitude
+        }
+    }
+    else if(message.MsgType === 'text'){
         ctx.body = message.Content
     }else if(message.MsgType === 'image'){
         ctx.body = {
