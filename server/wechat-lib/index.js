@@ -128,4 +128,50 @@ export default class Wechat {
         }
         return options
     }
+    async fetchMaterial(token,mediaId,type,permanent){
+        let form = {}
+        let fetchUrl = api.temporary.fetch
+        if(permanent){
+            fetchUrl = api.permanent.fetch
+        }
+        let url = fetchUrl + 'access_token=' + token
+        let options = {method: "POST",url:url}
+        if(permanent){
+            form.media_id = mediaId
+            form.access_token = token
+            options.body = form
+        }else{
+            if(type === 'video'){
+                url = url.replace('https://','http://')
+            }
+            url += '&media_id=' + mediaId
+        }
+        return options
+    }
+    async deleteMaterial(token,mediaId){
+        let from = {
+            media_id: mediaId
+        }
+        let url = api.permanent.del + 'access_token=' + token
+        return {method:"POST",url:url,body:form}
+    }
+    async updateMaterial(token,mediaId,news){
+        let form = {
+            media_id: mediaId
+        }
+        _.extend(form,news)
+        let url = api.permanent.update + 'access_token=' +token
+        return {method:'POST',url:url,body:form}
+    }
+    async countMaterial(token){
+        let url = api.permanent.count + 'access_token=' +token
+        return {method:'POST',url:url}
+    }
+    async batchMaterial(token,options){
+        options.type = options.type || 'image'
+        options.offset = options.offset || 0
+        options.count = options.count || 20
+        let url = api.permanent.batch + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
 }
