@@ -6,6 +6,7 @@ import config from '../config'
 
 export default (opts,reply) => {
     return async function wechatMiddle(ctx,next){
+        
         const { signature,nonce,timestamp,echostr} = ctx.query
         const token = config.wechat.token
         const str = [token,timestamp,nonce].sort().join('')
@@ -28,12 +29,13 @@ export default (opts,reply) => {
             })
             const content = await util.parseXML(data)
             console.log(content)
-            // const message = util.formatMessage(content.xml)
-            ctx.weixin = {}
-            await reply.apply(ctx,[ctx,next])
+            const message = util.formatMessage(content.xml)
+            // console.log(message)
+            ctx.weixin = message
+            await reply.apply(ctx,[ctx,next])//
             const replyBody = ctx.body
             const msg = ctx.weixin
-            // const xml = util.tpl(replyBody,msg)
+            const xml = util.tpl(replyBody,msg)
             console.log(replyBody)
             const xml = `<xml>
             
