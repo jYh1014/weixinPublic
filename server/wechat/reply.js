@@ -34,6 +34,7 @@ export default async (ctx,next) => {
         ctx.body = message.Location_X + ':' + message.Location_Y + message.Label
     }else if(message.MsgType === 'link'){
         ctx.body = [{
+            type:'link',
             title:message.Title,
             description:message.Description,
             picUrl:'http://mmbiz.qpic.cn/mmbiz_jpg/JLyiaIHgfCwrxO7SpIhVaXVu9jd6yIOvelEmsBuyBYmVcWM4pt7FaVhfnkP2TdKl7B44hF9h07ZkdFibu9ibv0xnw/0',

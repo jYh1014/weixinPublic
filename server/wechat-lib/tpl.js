@@ -46,6 +46,11 @@ const tpl = `
                 </item>
             <% }) %>
             </Articles>
+        <% } else if(msgType === 'link') { %>
+            <Title><![CDATA[<%= content.title %>]]></Title>
+            <Description><![CDATA[<%= content.description %>]]></Description>
+            <Url><![CDATA[<%= content.url %>]]></Url>
+            <MsgId>1234567890123456</MsgId>
         <% } %>
     </xml>
 `

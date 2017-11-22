@@ -43,6 +43,7 @@ tokenSchema.statics = {
             token.token = data.access_token
             token.expires_in = data.expires_in
         }else{
+            
             token = new Token({
                 name:'access_token',
                 token:data.access_token,
@@ -53,5 +54,5 @@ tokenSchema.statics = {
         return data
     }
 }
-
-export default mongoose.model('Token',tokenSchema)
+const Token = mongoose.model('Token',tokenSchema)
+export default Token
