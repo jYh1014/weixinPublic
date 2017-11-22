@@ -1,5 +1,5 @@
 import xml2js from 'xml2js'
-
+import template from './tpl'
 export function parseXML(xml){
     return new Promise((resolve,reject) => {
         xml2js.parseString(xml,{trim:true},(err,content) => {
@@ -12,7 +12,7 @@ export function parseXML(xml){
     })
 }
 
-export function formatMessage(result){
+export function formatMessage(result){//转化为对象格式
     
     let message = {}
     let keys = Object.keys(result)
@@ -42,5 +42,19 @@ export function formatMessage(result){
 }
 
 export function tpl(content,message){
-
+    let type = 'text'
+    if(Array.isArray(content)){
+        type = 'news'
+    }
+    if(content && content.type){
+        type = content.type
+    }
+    let info = Object.assign({},{
+        content: content,
+        createTime: new Date().getTime(),
+        msgType: type,
+        toUserName: message.FromUserName,
+        fromUserName: message.ToUserName
+    })
+    return template(info)
 }

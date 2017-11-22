@@ -28,7 +28,6 @@ export default (opts,reply) => {
                 encoding:ctx.charset
             })
             const content = await util.parseXML(data)
-            console.log(content)
             const message = util.formatMessage(content.xml)
             // console.log(message)
             ctx.weixin = message
@@ -36,20 +35,20 @@ export default (opts,reply) => {
             const replyBody = ctx.body
             const msg = ctx.weixin
             const xml = util.tpl(replyBody,msg)
-            console.log(replyBody)
-            const xml = `<xml>
+            // console.log(replyBody)
+            // const xml = `<xml>
             
-            <ToUserName><![CDATA[${content.xml.FromUserName[0]}]]></ToUserName>
+            // <ToUserName><![CDATA[${content.xml.FromUserName[0]}]]></ToUserName>
             
-            <FromUserName><![CDATA[${content.xml.ToUserName[0]}]]></FromUserName>
+            // <FromUserName><![CDATA[${content.xml.ToUserName[0]}]]></FromUserName>
             
-            <CreateTime>12345678</CreateTime>
+            // <CreateTime>12345678</CreateTime>
             
-            <MsgType><![CDATA[text]]></MsgType>
+            // <MsgType><![CDATA[text]]></MsgType>
             
-            <Content><![CDATA[${replyBody}]]></Content>
+            // <Content><![CDATA[${replyBody}]]></Content>
             
-            </xml>`
+            // </xml>`
             ctx.status = 200
             ctx.type = 'application/xml'
             ctx.body = xml
