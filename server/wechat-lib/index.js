@@ -19,6 +19,16 @@ const api = {
         update: base + '/material/update_news?',
         count: base + '/material/get_materialcount?',
         batch: base + '/material/batchget_material?'
+    },
+    tag: {
+        create: base + 'tags/create?',
+        fetch: base + 'tags/get?',
+        update: base + 'tags/update?',
+        del: base + 'tags/delete?',
+        fetchUser: base + 'user/tag/get?',
+        batchTag: base + 'tags/members/batchtagging?',
+        batchUnTag: base + 'tags/members/batchuntagging?',
+        getTagList: base + 'tags/getidlist?'
     }
 }
 async function statFile(filePath){
@@ -172,6 +182,58 @@ export default class Wechat {
         options.offset = options.offset || 0
         options.count = options.count || 20
         let url = api.permanent.batch + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async create(token,name){
+        let form = {
+            tag: {name:name}
+        }
+        let url = api.tag.create + 'access_token=' + token
+        return {method:"POST",url:url,body:form}
+    }
+    async fetchTags(token){
+        let url = api.tag.fetch + 'access_token=' + token
+        return {url:url}
+    }
+    async updateTag(token,tagId,name){
+        let form = {
+            tag:{id:tagId,name:name}
+        }
+        let url = api.tag.updateTag + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async delTag(token,tagId){
+        let form = {
+            tag:{id:tagId}
+        }
+        let url = api.tag.del + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async fetchTagUsers(token,tagId,openId){
+        let from = {
+            tagid:tagId,
+            next_openid: openId || ''
+        }
+        let url = api.tag.fetchUser + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async batchTag(token,openIdList,tagId,unTag){
+        let form = {
+            openid_list:openIdList,
+            tagid:tagId
+        }
+        let url = api.tag.batchTag 
+        if(unTag){
+            url = api.tag.batchUnTag
+        }
+        url += 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async getTagList(token,openId){
+        let form = {
+            openid:openId
+        }
+        let url = api.tag.getTagList + 'access_token=' + token
         return {method:'POST',url:url,body:form}
     }
 }
