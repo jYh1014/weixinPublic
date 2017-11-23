@@ -29,6 +29,15 @@ const api = {
         batchTag: base + 'tags/members/batchtagging?',
         batchUnTag: base + 'tags/members/batchuntagging?',
         getTagList: base + 'tags/getidlist?'
+    },
+    user: {
+        remark: base + 'user/info/updateremark?',
+        info: base + 'user/info?',
+        batchInfo: base + 'user/info/batchget?',
+        fetchUserList: base + 'user/get?',
+        getBlackList: base + 'tags/members/getblacklist?',
+        batchBlackUsers: base + 'tags/members/batchblacklis?',
+        batchUnBlackUsers: base + 'tags/members/batchunblacklist?'
     }
 }
 async function statFile(filePath){
@@ -235,5 +244,28 @@ export default class Wechat {
         }
         let url = api.tag.getTagList + 'access_token=' + token
         return {method:'POST',url:url,body:form}
+    }
+    async remarkUser(token,openId,remark){
+        let form = {
+            openid:openId,
+            remark:remark
+        }
+        let url = api.user.remark + 'access_token=' + token
+        return {method:'POST',url:url,body:form}
+    }
+    async getUserInfo(token,openId,lang){
+        let url = api.user.info + 'access_token=' + token + '&openid=' + openId+  '&lang=' + (lang || 'zh_CN')
+        return {url:url}
+    }
+    async batchUserInfo(token,userList){
+        let url = api.user.batchInfo + 'access_token=' + token
+        let form = {
+            user_list:userList
+        }
+        return {method:'POST',url:url,body:form}
+    }
+    async fetchUserList(token,openId){
+        let url = api.user.fetchUserList + 'access_token=' + token + '&openid=' + (openId || '')
+        return {url:url}
     }
 }
