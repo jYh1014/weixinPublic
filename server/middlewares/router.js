@@ -34,7 +34,8 @@ export const router = app => {
         // let userList = [ {openid:'obig21CB1xZuq31l5lmuIC1r1D2g',lang:'zh_CN'} ]
         // let data = await client.handle('batchTag',['obig21CB1xZuq31l5lmuIC1r1D2g'],100)
         // let data = await client.handle('getTagList','obig21CB1xZuq31l5lmuIC1r1D2g')
-        let data = await client.handle('getMenu')
+        // let data = await client.handle('delMenu')
+        let data = await client.handle('createMenu',menu)
         console.log(JSON.stringify(data))
     })
     

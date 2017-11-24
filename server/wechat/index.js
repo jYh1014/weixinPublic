@@ -12,6 +12,8 @@ const wechatConfig = {
         token: config.wechat.token,
         getAccessToken: async () => await Token.getAccessToken(),
         saveAccessToken: async (data) => await Token.saveAccessToken(data),
+        getTicket: async () => await Ticket.getTicket(),
+        saveTicket: async () => await Ticket.saveTicket()
     }
 }
 export const getWechat = () =>{

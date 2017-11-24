@@ -46,6 +46,9 @@ const api = {
         addCondition: base + '/menu/addconditional?',
         delCondition: base + '/menu/delconditional?',
         getInfo: base + '/get_current_selfmenu_info?'
+    },
+    ticket: {
+        get: base + '/ticket/getticket?'
     }
 
 }
@@ -68,6 +71,8 @@ export default class Wechat {
         this.appSecret = opts.appSecret
         this.getAccessToken = opts.getAccessToken
         this.saveAccessToken = opts.saveAccessToken
+        this.getTicket = opts.getTicket
+        this.saveTicket = opts.saveTicket
         this.fetchAccessToken()
     }
     async request(options) {
@@ -80,10 +85,28 @@ export default class Wechat {
     async fetchAccessToken(){
         
         let data = await this.getAccessToken()
-        if(await this.isValidAccessToken(data) == false){       
+        console.log(data)
+        if(await this.isValidToken(data,'access_token') == false){       
             data = await this.updateAccessToken()
         }
         await this.saveAccessToken(data)
+        return data
+    }
+    async fetchTicket(){
+        
+        let data = await this.getTicket()
+        if(await this.isValidToken(data,'ticket') == false){       
+            data = await this.updateTicket()
+        }
+        await this.saveTicket(data)
+        return data
+    }
+    async updateTicket(token){
+        let url = api.ticket.get + '&access_token=' + token + '&type=jsapi'
+        let data = await this.request({url:url})
+        let now = new Date().getTime()
+        let expiresIn = now + (data.expires_in -20)*1000
+        data.expires_in = expiresIn
         return data
     }
     async updateAccessToken(){
@@ -94,8 +117,8 @@ export default class Wechat {
         data.expires_in = expiresIn
         return data
     }
-    async isValidAccessToken(data){
-        if(!data){
+    async isValidToken(data,name){
+        if(!data || !data[name]){
             return false
         }
        
