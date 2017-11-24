@@ -2,7 +2,7 @@ const tip = "我是皮皮猪 "
 export default async (ctx,next) => {
    
     const message = ctx.weixin
-    console.log(message)
+    // console.log(message)
     if(message.MsgType === 'event'){
         if(message.Event === 'subscribe'){
             ctx.body = tip

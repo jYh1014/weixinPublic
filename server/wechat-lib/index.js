@@ -21,23 +21,23 @@ const api = {
         batch: base + '/material/batchget_material?'
     },
     tag: {
-        create: base + 'tags/create?',
-        fetch: base + 'tags/get?',
-        update: base + 'tags/update?',
-        del: base + 'tags/delete?',
-        fetchUser: base + 'user/tag/get?',
-        batchTag: base + 'tags/members/batchtagging?',
-        batchUnTag: base + 'tags/members/batchuntagging?',
-        getTagList: base + 'tags/getidlist?'
+        create: base + '/tags/create?',
+        fetch: base + '/tags/get?',
+        update: base + '/tags/update?',
+        del: base + '/tags/delete?',
+        fetchUser: base + '/user/tag/get?',
+        batchTag: base + '/tags/members/batchtagging?',
+        batchUnTag: base + '/tags/members/batchuntagging?',
+        getTagList: base + '/tags/getidlist?'
     },
     user: {
-        remark: base + 'user/info/updateremark?',
-        info: base + 'user/info?',
-        batchInfo: base + 'user/info/batchget?',
-        fetchUserList: base + 'user/get?',
-        getBlackList: base + 'tags/members/getblacklist?',
-        batchBlackUsers: base + 'tags/members/batchblacklis?',
-        batchUnBlackUsers: base + 'tags/members/batchunblacklist?'
+        remark: base + '/user/info/updateremark?',
+        info: base + '/user/info?',
+        batchInfo: base + '/user/info/batchget?',
+        fetchUserList: base + '/user/get?',
+        getBlackList: base + '/tags/members/getblacklist?',
+        batchBlackUsers: base + '/tags/members/batchblacklis?',
+        batchUnBlackUsers: base + '/tags/members/batchunblacklist?'
     }
 }
 async function statFile(filePath){
@@ -100,7 +100,7 @@ export default class Wechat {
     }
     async handle (operation, ...args) {
         const tokenData = await this.fetchAccessToken()
-        
+        // console.log(tokenData)
         const options = await this[operation](tokenData.access_token,...args)
         const data = await this.request(options)
         // console.log(data)
@@ -193,7 +193,7 @@ export default class Wechat {
         let url = api.permanent.batch + 'access_token=' + token
         return {method:'POST',url:url,body:form}
     }
-    async create(token,name){
+    async createTag(token,name){
         let form = {
             tag: {name:name}
         }
@@ -265,7 +265,7 @@ export default class Wechat {
         return {method:'POST',url:url,body:form}
     }
     async fetchUserList(token,openId){
-        let url = api.user.fetchUserList + 'access_token=' + token + '&openid=' + (openId || '')
+        let url = api.user.fetchUserList + 'access_token=' + token + '&next_openid=' + (openId || '')
         return {url:url}
     }
 }
