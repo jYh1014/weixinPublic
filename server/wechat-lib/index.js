@@ -38,7 +38,16 @@ const api = {
         getBlackList: base + '/tags/members/getblacklist?',
         batchBlackUsers: base + '/tags/members/batchblacklis?',
         batchUnBlackUsers: base + '/tags/members/batchunblacklist?'
+    },
+    menu: {
+        create: base + '/menu/create?',
+        get: base + '/menu/get?',
+        del: base + '/menu/delete?',
+        addCondition: base + '/menu/addconditional?',
+        delCondition: base + '/menu/delconditional?',
+        getInfo: base + '/get_current_selfmenu_info?'
     }
+
 }
 async function statFile(filePath){
     return new Promise((resolve,reject) => {
@@ -266,6 +275,37 @@ export default class Wechat {
     }
     async fetchUserList(token,openId){
         let url = api.user.fetchUserList + 'access_token=' + token + '&next_openid=' + (openId || '')
+        return {url:url}
+    }
+    async createMenu(token,menu){
+        let url = api.menu.create + 'access_token=' + token
+        return {method:'POST',url:url,body:menu}
+    }
+    async getMenu(token){
+        let url = api.menu.get + 'access_token=' + token   
+        return {url:url}     
+    }
+    async delMenu(token){
+        let url = api.menu.del + 'access_token=' + token   
+        return {url:url}     
+    }
+    async addCondition(token,menu,rule){
+        let url = api.menu.addCondition + 'access_token=' + token   
+        let form = {
+            button: menu,
+            matchrule: rule
+        }
+        return {method:'POST',url:url,body:form}     
+    }
+   async delCondition(token,menuId){
+        let url = api.menu.delCondition + 'access_token=' + token 
+        let from = {
+            menuid: menuId
+        }   
+        return {method:'POST',url:url,body:form}   
+    }
+    async getCurrentMenuInfo(token){
+        let url = api.menu.getInfo + 'access_token=' + token 
         return {url:url}
     }
 }

@@ -6,6 +6,7 @@ import wechatMiddle from '../wechat-lib/middleware'
 // import  '../wechat'
 import reply from '../wechat/reply'
 import {getWechat} from '../wechat'
+import menu from '../wechat/menu'
 let client = getWechat() 
 export const router = app => {
     const router = new Router()
@@ -29,10 +30,12 @@ export const router = app => {
         //         "content_source_url": 'http://baidu.com'
         //     }]
         // }
-        let userList = [ {openid:'obig21CB1xZuq31l5lmuIC1r1D2g',lang:'zh_CN'} ]
+        //测试用户管理功能
+        // let userList = [ {openid:'obig21CB1xZuq31l5lmuIC1r1D2g',lang:'zh_CN'} ]
         // let data = await client.handle('batchTag',['obig21CB1xZuq31l5lmuIC1r1D2g'],100)
-        let data = await client.handle('getTagList','obig21CB1xZuq31l5lmuIC1r1D2g')
-        console.log(data)
+        // let data = await client.handle('getTagList','obig21CB1xZuq31l5lmuIC1r1D2g')
+        let data = await client.handle('getMenu')
+        console.log(JSON.stringify(data))
     })
     
     app.use(router.routes())
