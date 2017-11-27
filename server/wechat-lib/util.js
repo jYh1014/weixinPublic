@@ -1,5 +1,6 @@
 import xml2js from 'xml2js'
 import template from './tpl'
+import sha1 from 'sha1'
 export function parseXML(xml){
     return new Promise((resolve,reject) => {
         xml2js.parseString(xml,{trim:true},(err,content) => {
@@ -57,4 +58,45 @@ export function tpl(content,message){
         fromUserName: message.ToUserName
     })
     return template(info)
+}
+export function createNonce(){
+    return Math.random().toString(36).substr(2,15)
+}
+export function createTimestamp(){
+    return parseInt(new Date().getTime() / 1000,0) + ''
+}
+export function raw(args){
+    let keys = Object.keys(args)
+    let newArgs = {}
+    let str = ''
+    keys = keys.sort()
+    keys.forEach(key => {
+        newArgs[key.toLocaleLowerCase()] = args[key]
+    })
+    
+    for(let k in newArgs){
+        str += '&' + k + '=' + newArgs[k]
+    }
+    return str.substr(1)
+}
+export function signIt(nonce,ticket,timestamp,url){
+    let ret = {
+        jsapi_ticket: ticket,
+        noncestr: nonce,
+        timestamp: timestamp,
+        url: url
+    }
+    let string = raw(ret)
+    let sha = sha1(string)
+    return sha
+}
+export function sign(ticket,url){
+    let nonce = createNonce()
+    let timestamp = createTimestamp()
+    let signature = signIt(nonce,ticket,timestamp,url)
+    return {
+        noncestr: nonce,
+        timestamp: timestamp,
+        signature: signature
+    }
 }

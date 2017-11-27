@@ -3,6 +3,7 @@ import formsteam from 'formstream'
 import fs from 'fs'
 import path from 'path'
 import _ from 'lodash'
+import { sign } from './util.js'
 const base = 'https://api.weixin.qq.com/cgi-bin'
 const api = {
     accessToken: base + '/token?grant_type=client_credential',
@@ -85,18 +86,18 @@ export default class Wechat {
     async fetchAccessToken(){
         
         let data = await this.getAccessToken()
-        console.log(data)
+        // console.log(data)
         if(await this.isValidToken(data,'access_token') == false){       
             data = await this.updateAccessToken()
         }
         await this.saveAccessToken(data)
         return data
     }
-    async fetchTicket(){
+    async fetchTicket(token){
         
         let data = await this.getTicket()
         if(await this.isValidToken(data,'ticket') == false){       
-            data = await this.updateTicket()
+            data = await this.updateTicket(token)
         }
         await this.saveTicket(data)
         return data
@@ -330,5 +331,8 @@ export default class Wechat {
     async getCurrentMenuInfo(token){
         let url = api.menu.getInfo + 'access_token=' + token 
         return {url:url}
+    }
+    async sign(ticket,url){
+        return sign(ticket,url)
     }
 }

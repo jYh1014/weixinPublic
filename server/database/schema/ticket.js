@@ -35,7 +35,8 @@ ticketSchema.statics = {
         }
         return ticket
     },
-    async saveTicket(data) {     
+    async saveTicket(data) {  
+        // console.log(data)   
         let ticket = await this.findOne({
             name:'ticket'
         }).exec()   

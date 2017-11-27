@@ -20,6 +20,7 @@
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "babel-eslint": "^7.1.1",
     "babel-preset-latest-node": "^0.2.2",
     "babel-preset-stage-3": "^6.24.1",
@@ -41,6 +42,7 @@
     "raw-body": "^2.3.2",
     "scmp": "^2.0.0",
     "sha1": "^1.1.1",
+    "vuex": "^3.0.1",
     "xml2js": "^0.4.19"
   }
 }
