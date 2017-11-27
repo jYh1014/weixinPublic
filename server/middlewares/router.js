@@ -7,12 +7,14 @@ import wechatMiddle from '../wechat-lib/middleware'
 import reply from '../wechat/reply'
 import {getWechat} from '../wechat'
 import menu from '../wechat/menu'
-import { signature } from '../controllers/wechat'
+import { signature ,redirect, oauth} from '../controllers/wechat'
 let client = getWechat() 
 export const router = app => {
     const router = new Router()
     router.all('/wechat-hear',wechatMiddle(config.wechat,reply))
     router.get('/wechat-signature',signature)
+    router.get('/wechat-redirect',redirect)
+    router.get('/wechat-oauth',oauth)
     router.get('/upload',async (ctx,next) => {
            
         // let news = {
@@ -37,7 +39,7 @@ export const router = app => {
         // let data = await client.handle('batchTag',['obig21CB1xZuq31l5lmuIC1r1D2g'],100)
         // let data = await client.handle('getTagList','obig21CB1xZuq31l5lmuIC1r1D2g')
         // let data = await client.handle('delMenu')
-        let data = await client.handle('createMenu',menu)
+        // let data = await client.handle('createMenu',menu)
         // console.log(JSON.stringify(data))
     })
     

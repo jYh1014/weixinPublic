@@ -1,4 +1,4 @@
-import { getWechat } from '../wechat'
+import { getWechat , getOAuth} from '../wechat'
 let client = getWechat()
 export async function getSignatureAsync(url) {
     let data = await client.fetchAccessToken()
@@ -9,4 +9,16 @@ export async function getSignatureAsync(url) {
     params.appId = client.appID
     // console.log(params)
     return params
+}
+
+export function getAuthorizeURL(...args){
+    let oauth = getOAuth()
+    return oauth.getAuthorizeURL(...args)
+}
+
+export async function getUserByCode(code){
+    let oauth = getOAuth()
+    let data =await oauth.fetchAccessToken(code)
+    let user = await oauth.getUserInfo(data.access_token,data.openid)
+    return user
 }

@@ -9,5 +9,12 @@ export default {
         // })
             
         return Services.getWechatSignature(url)
+    },
+    getUserByOAuth({ commit },url){
+        // return new Promise((resolve, reject) => {
+        //     commit(types.GETWECHAT_SIGNATURE, url)
+        // })
+            
+        return Services.getUserByOAuth(url)
     }
 }
