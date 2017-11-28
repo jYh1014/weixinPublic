@@ -6,6 +6,16 @@ export default {
     //     return Services.getWechatSignature(url)
     // }
     [types.GETWECHAT_SIGNATURE](state,url){
+        console.log(1)
         return Services.getWechatSignature(url)
+    },
+    [types.FETCH_HOUSES](state,houses){
+        state.houses = houses
+    },
+    [types.FETCH_CHARACTERS](state, characters){
+        state.characters = characters
+    },
+    [types.FETCH_CITIES](state, cities){
+        state.cities = cities
     }
 }

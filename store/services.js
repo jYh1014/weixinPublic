@@ -1,5 +1,7 @@
 import axios from 'axios'
 const baseUrl = ''
+const apiUrl = 'http://rap.taobao.org/mockjsdata/29702'
+
 class Services {
     getWechatSignature(url){
         console.log(axios.get(`${baseUrl}/wechat-signature?url=${url}`))
@@ -7,6 +9,15 @@ class Services {
     }
     getUserByOAuth(url){
         return axios.get(`${baseUrl}/wechat-oauth?url=${url}`)        
+    }
+    fetchHouses(){
+        return axios.get(`${apiUrl}/wiki/houses`)
+    }
+    fetchCharacters(){
+        return axios.get(`${apiUrl}/wiki/characters`)
+    }
+    fetchCities(){
+        return axios.get(`${apiUrl}/wiki/cities`)
     }
 }
 export default new Services()

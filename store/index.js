@@ -16,8 +16,11 @@ const debug = process.env.NODE_ENV !== 'production'
 // console.log(debug)
 const createStore = () => {
     return new Vuex.Store({
+      state:{
+        houses:[],characters:[],cities:[]
+      },
         actions,
-        // mutations,
+        mutations,
         getters,
         modules: {
           // user
