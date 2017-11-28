@@ -39,8 +39,14 @@ export default {
     async showHouse({commit},_id){
         
         let res = await Services.fetchHouse(_id)
-        console.log(res)
         await commit(types.SHOW_HOUSE,res.data.data)
+        return res
+    },
+    async showCharacter({commit},_id){
+        
+        let res = await Services.fetchCharacter(_id)
+        console.log(res)
+        await commit(types.SHOW_CHARACTER,res.data.data)
         return res
     }
 }

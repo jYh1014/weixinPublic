@@ -23,5 +23,12 @@ export default {
             return
         }
         state.currentHouse = house
+    },
+    [types.SHOW_CHARACTER](state,character){
+        console.log(character)
+        if(character._id === state.currentCharacter._id) {
+            return
+        }
+        state.currentCharacter = character
     }
 }

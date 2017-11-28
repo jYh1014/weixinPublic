@@ -33,7 +33,6 @@ export default {
   },
   beforeCreate(){
       let id = this.$route.query.id
-      console.log(id)
       this.$store.dispatch('showHouse',id)
   }
 }

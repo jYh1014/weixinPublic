@@ -21,7 +21,6 @@ export async function redirect(ctx,next){
     let {a,b} = ctx.query
     let params = `${a}_${b}`
     let url = api.getAuthorizeURL(scope,target,params)
-    console.log(url)
     ctx.redirect(url)
 }
 export async function oauth(ctx,next){
