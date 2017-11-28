@@ -19,5 +19,8 @@ class Services {
     fetchCities(){
         return axios.get(`${apiUrl}/wiki/cities`)
     }
+    fetchHouse(id){
+        return axios.get(`${apiUrl}/wiki/houses/${id}`)
+    }
 }
 export default new Services()

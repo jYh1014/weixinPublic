@@ -1,7 +1,7 @@
 import Services from './services'
 import * as types from './mutation-types'
 // import getWechatSignature from './mutations'
-console.log(types.FETCH_HOUSES)
+
 export default {
     getWechatSignature({ commit },url){
         // return new Promise((resolve, reject) => {
@@ -19,7 +19,7 @@ export default {
     },
     async fetchHouses({commit}){
         let res = await Services.fetchHouses()
-        console.log(res)
+        // console.log(res)
         await commit(types.FETCH_HOUSES,res.data[0].data)
         // state.houses = res.data.data
         return res
@@ -36,7 +36,11 @@ export default {
         // state.cities = res.data.data
         return res
     },
-    async showHouse({commit},id){
+    async showHouse({commit},_id){
         
+        let res = await Services.fetchHouse(_id)
+        console.log(res)
+        await commit(types.SHOW_HOUSE,res.data.data)
+        return res
     }
 }

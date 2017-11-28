@@ -38,13 +38,13 @@ import {mapState} from 'vuex'
       showHouse(item){
         this.$router.push({
           path: '/house',
-          query: {id: item.id}
+          query: {id: item._id}
         })
       },
       showCharacter(item){
         this.$router.push({
           path: '/character',
-          query: {id: item.id}
+          query: {id: item._id}
         })
       }
     },
@@ -54,7 +54,7 @@ import {mapState} from 'vuex'
       this.$store.dispatch('fetchCities')
     },
     mounted(){
-      console.log(this.characters)
+      console.log(this.houses)
       
     }
   }

@@ -17,5 +17,11 @@ export default {
     },
     [types.FETCH_CITIES](state, cities){
         state.cities = cities
+    },
+    [types.SHOW_HOUSE](state,house){
+        if(house._id === state.currentHouse._id) {
+            return
+        }
+        state.currentHouse = house
     }
 }

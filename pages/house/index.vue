@@ -4,11 +4,11 @@
         .desc
             .words {{house.words}}
             .name {{house.name}}
-    .house.body
+    .house-body
         .title {{house.cname}}
         .body {{house.intro}}
         .title 主要角色
-        .items(v-for='(item ,index) in house.swornMembers' :key='index')
+        .body(v-for='(item ,index) in house.swornMembers' :key='index')
             .members
              img(:src='item.profile')
              .desc
@@ -19,6 +19,7 @@
         .content(v-for='(text,textIndex) in item.content' :key='textIndex') {{text}}
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   head(){
       return {
@@ -27,12 +28,13 @@ export default {
   },
   computed: {
       ...mapState({
-          house: 'showHouse'
+          house: 'currentHouse'
       })
   },
   beforeCreate(){
-    //   let id = this.$router.query.id
-    //   this.$store.dispatch('showHouse',id)
+      let id = this.$route.query.id
+      console.log(id)
+      this.$store.dispatch('showHouse',id)
   }
 }
 </script>
