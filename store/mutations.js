@@ -6,7 +6,7 @@ export default {
     //     return Services.getWechatSignature(url)
     // }
     [types.GETWECHAT_SIGNATURE](state,url){
-        console.log(1)
+        
         return Services.getWechatSignature(url)
     },
     [types.FETCH_HOUSES](state,houses){

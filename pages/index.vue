@@ -1,7 +1,7 @@
 <template lang="pug">
   .container
-    .house(ref="house")
-      .items(v-for='(item,index) in houses' :key='index' @click='showHsouse(item)')
+    .house
+      .items(v-for='(item,index) in houses' :key='index' @click='showHouse(item)')
         .desc
           .words {{item.words}}
           .cname {{item.cname}}
@@ -16,7 +16,7 @@
             .name {{item.name}}
             .playedBy {{item.playedBy}}
     .city
-      .title 维斯特洛
+      .city-title 维斯特洛
       .intro 坐落于世界的最西端
       .items(v-for='(item,index) in cities' :key='index')
         .title {{item.title}}
@@ -52,12 +52,14 @@ import {mapState} from 'vuex'
       this.$store.dispatch('fetchHouses')
       this.$store.dispatch('fetchCharacters')
       this.$store.dispatch('fetchCities')
+    },
+    mounted(){
+      console.log(this.characters)
+      
     }
   }
 </script>>
-<style scoped>
-.title
-{
-  margin: 50px 0;
-}
+<style scoped lang='sass' src='../static/sass/index.sass'>
+
+
 </style>
