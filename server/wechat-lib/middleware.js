@@ -35,7 +35,6 @@ export default (opts,reply) => {
             const replyBody = ctx.body
             const msg = ctx.weixin
             const xml = util.tpl(replyBody,msg)
-            // console.log(replyBody)
             // const xml = `<xml>
             
             // <ToUserName><![CDATA[${content.xml.FromUserName[0]}]]></ToUserName>

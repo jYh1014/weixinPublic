@@ -80,13 +80,11 @@ export default class Wechat {
         
         options = Object.assign({},options,{json:true})
         const response = await request(options)
-        // console.log(response)
         return response
     }
     async fetchAccessToken(){
         
         let data = await this.getAccessToken()
-        // console.log(data)
         if(await this.isValidToken(data,'access_token') == false){       
             data = await this.updateAccessToken()
         }
@@ -133,10 +131,8 @@ export default class Wechat {
     }
     async handle (operation, ...args) {
         const tokenData = await this.fetchAccessToken()
-        // console.log(tokenData)
         const options = await this[operation](tokenData.access_token,...args)
         const data = await this.request(options)
-        // console.log(data)
         return data
     }
     async uploadMaterial(token, type, material, permanent){
