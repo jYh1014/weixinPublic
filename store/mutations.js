@@ -35,5 +35,17 @@ export default {
         // console.log(character)
         
         state.products = products
+    },
+    [types.SHOW_PRODUCT](state,product){
+
+        if(product._id === state.currentProduct._id) {
+            return
+        }
+        
+        state.currentProduct = product
+    },
+    [types.FETCH_USERANDORDER](state,user){
+          
+        state.user = user
     }
 }

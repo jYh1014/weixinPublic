@@ -52,8 +52,20 @@ export default {
     async fetchProducts({commit}){
         
         let res = await Services.fetchProducts()
-        console.log(res)
         await commit(types.FETCH_PRODUCTS,res.data.data)
+        return res
+    },
+    async showProduct({commit},_id){
+
+        let res = await Services.showProduct(_id)
+        await commit(types.SHOW_PRODUCT,res.data.data)
+        return res
+    },
+    async fetchUserAndOrders({commit}){
+        
+        let res = await Services.fetchUserAndOrders()
+        console.log(res)
+        await commit(types.FETCH_USERANDORDER,res.data.data)
         return res
     }
 }

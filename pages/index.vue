@@ -54,8 +54,14 @@ import {mapState} from 'vuex'
       this.$store.dispatch('fetchCities')
     },
     mounted(){
-      // console.log(this.houses)
+      console.log('mouted')
       
+    },
+    beforeUpdate(){
+      console.log('beforeUpdate')
+    },
+    updated(){
+      console.log('updated')
     }
   }
 </script>>
