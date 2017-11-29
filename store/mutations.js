@@ -25,10 +25,15 @@ export default {
         state.currentHouse = house
     },
     [types.SHOW_CHARACTER](state,character){
-        console.log(character)
+        // console.log(character)
         if(character._id === state.currentCharacter._id) {
             return
         }
         state.currentCharacter = character
+    },
+    [types.FETCH_PRODUCTS](state,products){
+        // console.log(character)
+        
+        state.products = products
     }
 }

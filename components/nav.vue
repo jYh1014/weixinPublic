@@ -20,7 +20,7 @@
           {
             'path': '/',
             'name': 'index',
-            'text': '脸谱'
+            'text': '冰火脸谱'
           },
           {
             'path': '/shopping',
@@ -31,7 +31,7 @@
           {
             'path': '/user',
             'name': 'user',
-            'text': '账户'
+            'text': '我的账户'
           }
         ]
       }

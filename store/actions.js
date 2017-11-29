@@ -45,8 +45,15 @@ export default {
     async showCharacter({commit},_id){
         
         let res = await Services.fetchCharacter(_id)
-        console.log(res)
+        // console.log(res)
         await commit(types.SHOW_CHARACTER,res.data.data)
+        return res
+    },
+    async fetchProducts({commit}){
+        
+        let res = await Services.fetchProducts()
+        console.log(res)
+        await commit(types.FETCH_PRODUCTS,res.data.data)
         return res
     }
 }
