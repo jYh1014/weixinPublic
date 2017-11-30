@@ -16,9 +16,10 @@ export const getIMDBChatacters = async () => {
         let nmId = $(this).find('td.itemprop a')
         nmId = nmId.attr('href')
     
-        let character = $(this).find('td.character a')
-    
+        let character = $(this).find('td.character a:first-child')
+
         let name = character.text()
+        console.log(name)
         let chId = character.attr('href')
         photos.push({
             nmId,chId,name,playedBy
@@ -31,7 +32,6 @@ export const getIMDBChatacters = async () => {
             const reg2 = /\/title\/(.*?)\?ref/
             let match1 = photo.nmId.match(reg1)
             let match2 = photo.chId.match(reg2)
-            console.log(match1)
             photo.nmId = match1[1]
             photo.chId = match2[1]
             return photo
