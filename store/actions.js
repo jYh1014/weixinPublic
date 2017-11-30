@@ -64,7 +64,7 @@ export default {
     async fetchUserAndOrders({commit}){
         
         let res = await Services.fetchUserAndOrders()
-        console.log(res)
+        // console.log(res)
         await commit(types.FETCH_USERANDORDER,res.data.data)
         return res
     }

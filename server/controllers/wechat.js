@@ -30,7 +30,7 @@ export async function oauth(ctx,next){
     let params = queryParse(urlObj.query)
     let code = params.code
     let user = await api.getUserByCode(code)
-    console.log(user)
+    // console.log(user)
 
     ctx.body = {
         success:true,

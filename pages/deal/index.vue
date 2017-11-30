@@ -46,7 +46,7 @@ export default {
   },
   methods: {
       buyProduct(item){
-          console.log(item)
+        //   console.log(item)
       }
   },
   beforeCreate(){   

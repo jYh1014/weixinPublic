@@ -80,6 +80,7 @@ export default class Wechat {
         
         options = Object.assign({},options,{json:true})
         const response = await request(options)
+        // console.log(response)
         return response
     }
     async fetchAccessToken(){

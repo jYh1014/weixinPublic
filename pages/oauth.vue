@@ -19,7 +19,7 @@ export default {
 
     this.$store.dispatch('getUserByOAuth',encodeURIComponent(url))
       .then(res => {
-          console.log(res)
+          // console.log(res)
         if(res.data.success){
           let params = res.data.params
         //   console.log(params)

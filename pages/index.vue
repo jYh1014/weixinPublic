@@ -53,16 +53,7 @@ import {mapState} from 'vuex'
       this.$store.dispatch('fetchCharacters')
       this.$store.dispatch('fetchCities')
     },
-    mounted(){
-      console.log('mouted')
-      
-    },
-    beforeUpdate(){
-      console.log('beforeUpdate')
-    },
-    updated(){
-      console.log('updated')
-    }
+    
   }
 </script>>
 <style scoped lang='sass' src='../static/sass/index.sass'>
