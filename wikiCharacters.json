@@ -54,6 +54,18 @@
     "playedBy": "Alfie Allen"
   },
   {
+    "nmId": "nm0318821",
+    "chId": "tt0944947/characters/nm0318821",
+    "name": "Petyr 'Littlefinger' Baelish",
+    "playedBy": "Aidan Gillen"
+  },
+  {
+    "nmId": "nm0384152",
+    "chId": "tt0944947/characters/nm0384152",
+    "name": "Lord Varys",
+    "playedBy": "Conleth Hill"
+  },
+  {
     "nmId": "nm3729225",
     "chId": "tt0944947/characters/nm3729225",
     "name": "Brienne of Tarth",
@@ -78,6 +90,24 @@
     "playedBy": "Nathalie Emmanuel"
   },
   {
+    "nmId": "nm0564920",
+    "chId": "tt0944947/characters/nm0564920",
+    "name": "Sandor 'The Hound' Clegane",
+    "playedBy": "Rory McCann"
+  },
+  {
+    "nmId": "nm0002103",
+    "chId": "tt0944947/characters/nm0002103",
+    "name": "Grand Maester Pycelle",
+    "playedBy": "Julian Glover"
+  },
+  {
+    "nmId": "nm0174005",
+    "chId": "tt0944947/characters/nm0174005",
+    "name": "Eddison Tollett",
+    "playedBy": "Ben Crompton"
+  },
+  {
     "nmId": "nm4535552",
     "chId": "tt0944947/characters/nm4535552",
     "name": "Podrick Payne",
@@ -88,6 +118,12 @@
     "chId": "tt0944947/characters/nm0396924",
     "name": "Melisandre",
     "playedBy": "Carice van Houten"
+  },
+  {
+    "nmId": "nm1970465",
+    "chId": "tt0944947/characters/nm1970465",
+    "name": "Tormund Giantsbane",
+    "playedBy": "Kristofer Hivju"
   },
   {
     "nmId": "nm2760664",
@@ -138,6 +174,12 @@
     "playedBy": "Hannah Murray"
   },
   {
+    "nmId": "nm3964231",
+    "chId": "tt0944947/characters/nm3964231",
+    "name": "Hodor",
+    "playedBy": "Kristian Nairn"
+  },
+  {
     "nmId": "nm4440305",
     "chId": "tt0944947/characters/nm4440305",
     "name": "Grenn",
@@ -160,6 +202,12 @@
     "chId": "tt0944947/characters/nm1402546",
     "name": "Shae",
     "playedBy": "Sibel Kekilli"
+  },
+  {
+    "nmId": "nm3701064",
+    "chId": "tt0944947/characters/nm3701064",
+    "name": "Ramsay Bolton",
+    "playedBy": "Iwan Rheon"
   },
   {
     "nmId": "nm0568385",
@@ -190,6 +238,12 @@
     "chId": "tt0944947/characters/nm0401264",
     "name": "Daario Naharis",
     "playedBy": "Michiel Huisman"
+  },
+  {
+    "nmId": "nm0001671",
+    "chId": "tt0944947/characters/nm0001671",
+    "name": "Olenna Tyrell",
+    "playedBy": "Diana Rigg"
   },
   {
     "nmId": "nm2835616",
@@ -226,6 +280,24 @@
     "chId": "tt0944947/characters/nm0141582",
     "name": "Janos Slynt",
     "playedBy": "Dominic Carter"
+  },
+  {
+    "nmId": "nm1613839",
+    "chId": "tt0944947/characters/nm1613839",
+    "name": "Wun Wun",
+    "playedBy": "Ian Whyte"
+  },
+  {
+    "nmId": "nm0838910",
+    "chId": "tt0944947/characters/nm0838910",
+    "name": "Maester Luwin",
+    "playedBy": "Donald Sumpter"
+  },
+  {
+    "nmId": "nm2247629",
+    "chId": "tt0944947/characters/nm2247629",
+    "name": "Yara Greyjoy",
+    "playedBy": "Gemma Whelan"
   },
   {
     "nmId": "nm5485781",
@@ -270,6 +342,12 @@
     "playedBy": "Amrita Acharia"
   },
   {
+    "nmId": "nm0000596",
+    "chId": "tt0944947/characters/nm0000596",
+    "name": "High Sparrow",
+    "playedBy": "Jonathan Pryce"
+  },
+  {
     "nmId": "nm0181920",
     "chId": "tt0944947/characters/nm0181920",
     "name": "Jeor Mormont",
@@ -288,16 +366,40 @@
     "playedBy": "Ben Hawkey"
   },
   {
+    "nmId": "nm0891092",
+    "chId": "tt0944947/characters/nm0891092",
+    "name": "Maester Aemon",
+    "playedBy": "Peter Vaughan"
+  },
+  {
+    "nmId": "nm3849670",
+    "chId": "tt0944947/characters/nm3849670",
+    "name": "The Waif",
+    "playedBy": "Faye Marsay"
+  },
+  {
     "nmId": "nm1861467",
     "chId": "tt0944947/characters/nm1861467",
     "name": "Doreah",
     "playedBy": "Roxanne McKee"
   },
   {
+    "nmId": "nm0000293",
+    "chId": "tt0944947/characters/nm0000293",
+    "name": "Eddard 'Ned' Stark",
+    "playedBy": "Sean Bean"
+  },
+  {
     "nmId": "nm0443373",
     "chId": "tt0944947/characters/nm0443373",
     "name": "Thoros of Myr",
     "playedBy": "Paul Kaye"
+  },
+  {
+    "nmId": "nm0001216",
+    "chId": "tt0944947/characters/nm0001216",
+    "name": "Selyse Baratheon",
+    "playedBy": "Tara Fitzgerald"
   },
   {
     "nmId": "nm1032473",
@@ -316,6 +418,12 @@
     "chId": "tt0944947/characters/nm1638006",
     "name": "Bowen Marsh",
     "playedBy": "Michael Condron"
+  },
+  {
+    "nmId": "nm0597388",
+    "chId": "tt0944947/characters/nm0597388",
+    "name": "Khal Drogo",
+    "playedBy": "Jason Momoa"
   },
   {
     "nmId": "nm0233807",
@@ -366,16 +474,46 @@
     "playedBy": "Jessica Henwick"
   },
   {
+    "nmId": "nm1821446",
+    "chId": "tt0944947/characters/nm1821446",
+    "name": "Septa Unella",
+    "playedBy": "Hannah Waddingham"
+  },
+  {
+    "nmId": "nm2996220",
+    "chId": "tt0944947/characters/nm2996220",
+    "name": "Robin Arryn",
+    "playedBy": "Lino Facioli"
+  },
+  {
     "nmId": "nm4422626",
     "chId": "tt0944947/characters/nm4422626",
     "name": "Tommen Baratheon",
     "playedBy": "Callum Wharry"
   },
   {
+    "nmId": "nm0004692",
+    "chId": "tt0944947/characters/nm0004692",
+    "name": "Robert Baratheon",
+    "playedBy": "Mark Addy"
+  },
+  {
+    "nmId": "nm0050959",
+    "chId": "tt0944947/characters/nm0050959",
+    "name": "Oberyn Martell",
+    "playedBy": "Pedro Pascal"
+  },
+  {
     "nmId": "nm0535837",
     "chId": "tt0944947/characters/nm0535837",
     "name": "Yoren",
     "playedBy": "Francis Magee"
+  },
+  {
+    "nmId": "nm0751085",
+    "chId": "tt0944947/characters/nm0751085",
+    "name": "Brynden 'Blackfish' Tully",
+    "playedBy": "Clive Russell"
   },
   {
     "nmId": "nm1175468",
@@ -406,6 +544,18 @@
     "chId": "tt0944947/characters/nm0188871",
     "name": "Orell",
     "playedBy": "Mackenzie Crook"
+  },
+  {
+    "nmId": "nm0114742",
+    "chId": "tt0944947/characters/nm0114742",
+    "name": "Septa Mordane",
+    "playedBy": "Susan Brown"
+  },
+  {
+    "nmId": "nm1043031",
+    "chId": "tt0944947/characters/nm1043031",
+    "name": "Black Walder Rivers",
+    "playedBy": "Tim Plester"
   },
   {
     "nmId": "nm1502469",
@@ -480,16 +630,34 @@
     "playedBy": "John Stahl"
   },
   {
+    "nmId": "nm0408591",
+    "chId": "tt0944947/characters/nm0408591",
+    "name": "Dagmer Cleftjaw",
+    "playedBy": "Ralph Ineson"
+  },
+  {
     "nmId": "nm8165602",
     "chId": "tt0944947/characters/nm8165602",
     "name": "Lyanna Mormont",
     "playedBy": "Bella Ramsey"
   },
   {
+    "nmId": "nm3531913",
+    "chId": "tt0944947/characters/nm3531913",
+    "name": "Walda Bolton",
+    "playedBy": "Elizabeth Webster"
+  },
+  {
     "nmId": "nm4514519",
     "chId": "tt0944947/characters/nm4514519",
     "name": "Trystane Martell",
     "playedBy": "Toby Sebastian"
+  },
+  {
+    "nmId": "nm1652341",
+    "chId": "tt0944947/characters/nm1652341",
+    "name": "Steelshanks Walton",
+    "playedBy": "Jamie Michie"
   },
   {
     "nmId": "nm0309693",
@@ -516,16 +684,40 @@
     "playedBy": "Yuri Kolokolnikov"
   },
   {
+    "nmId": "nm1218607",
+    "chId": "tt0944947/characters/nm1218607",
+    "name": "Karl Tanner",
+    "playedBy": "Burn Gorman"
+  },
+  {
     "nmId": "nm3330122",
     "chId": "tt0944947/characters/nm3330122",
     "name": "Ilyn Payne",
     "playedBy": "Wilko Johnson"
   },
   {
+    "nmId": "nm1409802",
+    "chId": "tt0944947/characters/nm1409802",
+    "name": "Qhorin Halfhand",
+    "playedBy": "Simon Armstrong"
+  },
+  {
+    "nmId": "nm2869309",
+    "chId": "tt0944947/characters/nm2869309",
+    "name": "Lommy Greenhands",
+    "playedBy": "Eros Vlahos"
+  },
+  {
     "nmId": "nm4523680",
     "chId": "tt0944947/characters/nm4523680",
     "name": "Matthos Seaworth",
     "playedBy": "Kerr Logan"
+  },
+  {
+    "nmId": "nm1978998",
+    "chId": "tt0944947/characters/nm1978998",
+    "name": "Black Lorren",
+    "playedBy": "Forbes KB"
   },
   {
     "nmId": "nm0571654",
@@ -538,6 +730,12 @@
     "chId": "tt0944947/characters/nm0429956",
     "name": "Biter",
     "playedBy": "Gerard Jordan"
+  },
+  {
+    "nmId": "nm7075019",
+    "chId": "tt0944947/characters/nm7075019",
+    "name": "Young Ned",
+    "playedBy": "Robert Aramayo"
   },
   {
     "nmId": "nm4385245",
@@ -558,6 +756,12 @@
     "playedBy": "Ed Skrein"
   },
   {
+    "nmId": "nm0544139",
+    "chId": "tt0944947/characters/nm0544139",
+    "name": "Greatjon Umber",
+    "playedBy": "Clive Mantle"
+  },
+  {
     "nmId": "nm0815420",
     "chId": "tt0944947/characters/nm0815420",
     "name": "Mirri Maz Duur",
@@ -574,6 +778,12 @@
     "chId": "tt0944947/characters/nm0383835",
     "name": "Kraznys mo Nakloz",
     "playedBy": "Dan Hildebrand"
+  },
+  {
+    "nmId": "nm2589085",
+    "chId": "tt0944947/characters/nm2589085",
+    "name": "Rattleshirt",
+    "playedBy": "Edward Dogliani"
   },
   {
     "nmId": "nm6729880",
@@ -594,10 +804,22 @@
     "playedBy": "Roger Allam"
   },
   {
+    "nmId": "nm1778512",
+    "chId": "tt0944947/characters/nm1778512",
+    "name": "Lem Lemoncloak",
+    "playedBy": "Jóhannes Haukur Jóhannesson"
+  },
+  {
     "nmId": "nm0269923",
     "chId": "tt0944947/characters/nm0269923",
     "name": "Aeron Greyjoy",
     "playedBy": "Michael Feast"
+  },
+  {
+    "nmId": "nm0424191",
+    "chId": "tt0944947/characters/nm0424191",
+    "name": "Old Nan",
+    "playedBy": "Margaret John"
   },
   {
     "nmId": "nm1947403",
@@ -618,10 +840,22 @@
     "playedBy": "Brendan McCormack"
   },
   {
+    "nmId": "nm0428765",
+    "chId": "tt0944947/characters/nm0428765",
+    "name": "Shagga",
+    "playedBy": "Mark Lewis Jones"
+  },
+  {
     "nmId": "nm3671418",
     "chId": "tt0944947/characters/nm3671418",
     "name": "Quaithe",
     "playedBy": "Laura Pradelska"
+  },
+  {
+    "nmId": "nm1519719",
+    "chId": "tt0944947/characters/nm1519719",
+    "name": "Young Nan",
+    "playedBy": "Annette Tierney"
   },
   {
     "nmId": "nm1677757",
@@ -636,10 +870,40 @@
     "playedBy": "Gary Oliver"
   },
   {
+    "nmId": "nm7509185",
+    "chId": "tt0944947/characters/nm7509185",
+    "name": "Young Ned Stark",
+    "playedBy": "Sebastian Croft"
+  },
+  {
+    "nmId": "nm5502295",
+    "chId": "tt0944947/characters/nm5502295",
+    "name": "Young Benjen Stark",
+    "playedBy": "Matteo Elezi"
+  },
+  {
     "nmId": "nm0928408",
     "chId": "tt0944947/characters/nm0928408",
     "name": "Tobho Mott",
     "playedBy": "Andrew Wilde"
+  },
+  {
+    "nmId": "nm0734654",
+    "chId": "tt0944947/characters/nm0734654",
+    "name": "Three-Eyed Raven",
+    "playedBy": "Struan Rodger"
+  },
+  {
+    "nmId": "nm4958677",
+    "chId": "tt0944947/characters/nm4958677",
+    "name": "Joyeuse Frey",
+    "playedBy": "Kelly Long"
+  },
+  {
+    "nmId": "nm0819087",
+    "chId": "tt0944947/characters/nm0819087",
+    "name": "Melessa Tarly",
+    "playedBy": "Samantha Spiro"
   },
   {
     "nmId": "nm0916037",
@@ -702,6 +966,12 @@
     "playedBy": "Paola Dionisotti"
   },
   {
+    "nmId": "nm0727778",
+    "chId": "tt0944947/characters/nm0727778",
+    "name": "Aerys Targaryen",
+    "playedBy": "David Rintoul"
+  },
+  {
     "nmId": "nm2238815",
     "chId": "tt0944947/characters/nm2238815",
     "name": "Dickon Tarly",
@@ -736,6 +1006,12 @@
     "chId": "tt0944947/characters/nm6793798",
     "name": "Gerold Hightower",
     "playedBy": "Eddie Eyre"
+  },
+  {
+    "nmId": "nm8108764",
+    "chId": "tt0944947/characters/nm8108764",
+    "name": "Young Lyanna Stark",
+    "playedBy": "Cordelia Hill"
   },
   {
     "nmId": "nm2162079",

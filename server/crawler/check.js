@@ -7,11 +7,12 @@ const characters = require(resolve(__dirname,'../../characters.json'))
 const IMDbData = require(resolve(__dirname,'../../imdb.json'))
 
 const findNameInAPI = item => {
-    console.log(find(characters, {name: item.name}))
-    return find(characters, {name: item.name})
-    // characters.filter(i => {
-    //     i.name == item.name
-    // })
+    // return find(characters, {name: item.name})//
+    
+    return characters.map(i => {
+        i.name == item.name
+    })
+    
 }
 const findPlayedByInAPI = item => {
     return find(characters, i => {
