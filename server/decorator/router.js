@@ -15,16 +15,20 @@ export default class Route {
     }
     init(){
         glob.sync(resolve(this.apiPath, './*.js')).forEach(require)
-        console.log(routersMap)
+        // console.log(routersMap)
         for(let [conf, controller] of routersMap){
+           
             const controllers = isArray(controller)
+            // console.log(controllers)
             let prefixPath = conf.target[symbolPrefix]
             if(prefixPath) prefixPath = normalizePath(prefixPath)
             const routerPath = prefixPath + conf.path
-            this.router[conf.method](routerPath,...controllers)
+            console.log(routerPath)
+            this.router[conf.method](routerPath, ...controllers)
             this.app.use(this.router.routes())
             this.app.use(this.router.allowedMethods())
         }
+        // console.log(routersMap)
     }
 }
 
@@ -34,7 +38,11 @@ export const router = conf => (target, key, desc) => {
         target: target,...conf
     },target[key])
 }
-export const controller = path => target => target.prototype[symbolPrefix] = path
+export const controller = path => {
+    // console.log(path)
+   return target =>{target.prototype[symbolPrefix] = path;console.log(target.prototype)}
+}
+//  console.log(controller)
 export const get = path => router({
     method: 'get',path: path
 })
