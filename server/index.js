@@ -25,7 +25,7 @@ if (config.dev) {
 
 //加入中间件
 R.map(R.compose(
-  R.map(i => i(app)),
+  R.map(i => i()),
   require,
   i => `${r('./middlewares')}/${i}`
 ))(MIDDLEWARES)
