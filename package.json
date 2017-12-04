@@ -15,6 +15,7 @@
     "cross-env": "^5.0.1",
     "koa": "^2.4.1",
     "nuxt": "^1.0.0-rc3",
+    "qshell": "^0.2.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "source-map-support": "^0.4.15"
@@ -41,7 +42,9 @@
     "node-sass": "^4.7.2",
     "nodemon": "^1.11.0",
     "pug": "^2.0.0-rc.4",
+    "qiniu": "^7.1.1",
     "ramda": "^0.25.0",
+    "random-token": "0.0.8",
     "raw-body": "^2.3.2",
     "sass-loader": "^6.0.6",
     "scmp": "^2.0.0",
