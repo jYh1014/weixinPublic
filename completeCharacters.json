@@ -1,3 +1,50 @@
 [
-  null
+  {
+    "name": "Tyrion Lannister",
+    "cname": "提利昂·兰尼斯特",
+    "playedBy": "Peter Dinklage",
+    "profile": "nm0227759/d1kktm2ahr0zrhzxwp4p9ax5lan83gka",
+    "images": [
+      "nm0227759/60zvvelhsp6yp1e14wq4wy4e4fl99pej",
+      "nm0227759/dy4x2v3i1y0cbhayj46ii2r7b5mg5rua",
+      "nm0227759/npgxpwwd8svvqyjx8ch0odedfcmradq4",
+      "nm0227759/hgumf28tbkjq0vbobtt6rg7pc8110h8f",
+      "nm0227759/cojzkzztql5kvsj65l1xwf779o55zufj",
+      "nm0227759/ou9l4ahnayax5epilh16zf4ask0htq9j",
+      "nm0227759/s3ajn3zid7d6a67c2xgp3pcqvjmimuqx",
+      "nm0227759/1bg6v0x186yhx4cc1o2i8hobls12pru3",
+      "nm0227759/uomp68cn103nqhu7dv5oss2hr6lhb0tx",
+      "nm0227759/wtv5l035pdqki4dy49pewxiw7n61v4bi",
+      "nm0227759/4bs9p80opzeezbo7mmgfw5gojspofyxf",
+      "nm0227759/s3oqteotiien18gtutyasv69f5rcizbl",
+      "nm0227759/methts1b6ez4numk5p079irn1tgfrn5k",
+      "nm0227759/olf5jmta2oc6nwc3lkk204zu192rtimi",
+      "nm0227759/tv959xyfrd22i5smnxdqcraor8vczrqy",
+      "nm0227759/e98lch88mt0les4b30ltcica5t54dkvo",
+      "nm0227759/k6xc8nam6eysalbg63uo6asd4lecwxpz",
+      "nm0227759/lykudqy0cv3i4t7q5dcg12dpc724407p",
+      "nm0227759/s4zzqpw10eq58ngfqr330255bjuf18yp",
+      "nm0227759/reukonu7y54ory1xzi4yg0xdv7ww0gpj",
+      "nm0227759/62ogqb1y3qd9rr06e78wmetshv32tat3",
+      "nm0227759/nxhev98d6qpjeucjualxxc0rn7hiskip",
+      "nm0227759/22z5pwwe31cqc070oyrt5vqvp71vc7ey"
+    ],
+    "chId": "tt0944947/characters/nm0227759",
+    "nmId": "nm0227759",
+    "sections": [
+      {
+        "level": 1,
+        "title": "提利昂·兰尼斯特",
+        "content": [
+          "提利昂·兰尼斯特（Tyrion Lannister）是泰温公爵和乔安娜夫人的第三个也是最小的孩子。因为是个侏儒，他有时候被戏称为小恶魔和半人。他利用自己的智慧屡次化险为夷，帮助兰尼斯特家族赢得了五王之战，但命运的不公使得他成为了一个弑亲者和通缉犯，踏上了流亡之路。",
+          "提利昂是书中一个非常重要的POV人物。在电视剧中，由皮特·丁拉基扮演。"
+        ]
+      }
+    ],
+    "intro": [
+      "提利昂·兰尼斯特（Tyrion Lannister）是泰温公爵和乔安娜夫人的第三个也是最小的孩子。因为是个侏儒，他有时候被戏称为小恶魔和半人。他利用自己的智慧屡次化险为夷，帮助兰尼斯特家族赢得了五王之战，但命运的不公使得他成为了一个弑亲者和通缉犯，踏上了流亡之路。",
+      "提利昂是书中一个非常重要的POV人物。在电视剧中，由皮特·丁拉基扮演。"
+    ],
+    "wikiId": 223
+  }
 ]
