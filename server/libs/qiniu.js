@@ -34,7 +34,7 @@ export const fetchImage = async (url, key) => {
         const bash = `qshell fetch ${url} ${bucket} '${key}'`
         const child = exec(bash, {async: true})
         child.stdout.on('data', data => {
-            console.log(data)
+            // console.log(data)
             resolve(data)
         })
     })

@@ -209,7 +209,7 @@ export const getSwornMembers = async => {
         )
     )
     let swornMembers = findSwornMembers(houses)
-    console.log(swornMembers)
+    // console.log(swornMembers)
     houses = _.map(houses, (item,index) => {
         item.swornMembers = swornMembers[index]
         return item

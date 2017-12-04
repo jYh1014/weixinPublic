@@ -3,9 +3,10 @@ import glob from 'glob'
 import { resolve } from 'path'
 import _ from 'lodash'
 export let routersMap = new Map()
+// console.log(routersMap)
 export const symbolPrefix = Symbol('prefix')
 export const isArray = v => _.isArray(v)?v:[v]
-export const normalizePath = path => path.startsWith('/')?path:'/${path}'
+export const normalizePath = path => path.startsWith('/')?path:`/${path}`
 export default class Route {
     constructor(app, apiPath){
         this.app = app
@@ -14,13 +15,14 @@ export default class Route {
     }
     init(){
         glob.sync(resolve(this.apiPath, './*.js')).forEach(require)
-        for(let [conf, controller] of routesMap){
+        console.log(routersMap)
+        for(let [conf, controller] of routersMap){
             const controllers = isArray(controller)
             let prefixPath = conf.target[symbolPrefix]
             if(prefixPath) prefixPath = normalizePath(prefixPath)
             const routerPath = prefixPath + conf.path
             this.router[conf.method](routerPath,...controllers)
-            this.app.use(this.router.routes)
+            this.app.use(this.router.routes())
             this.app.use(this.router.allowedMethods())
         }
     }

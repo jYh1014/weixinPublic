@@ -18,7 +18,7 @@ const formData = R.map(i => {
     return i
 })
 wikiCharacters = formData(wikiCharacters)
-export const database = () => {
+export const database = (app) => {
     mongoose.set('debug',true)
     mongoose.connect(config.db)
     mongoose.connection.on('disconnect',() => {
@@ -31,9 +31,8 @@ export const database = () => {
         console.log('connetion db')
         let existWikiCharacters = await WikiCharacters.find({}).exec()
         let existWikiHouses = await WikiHouses.find({}).exec()
-        console.log(existWikiCharacters)
         if(existWikiCharacters.length === 0){
-            console.log(12)
+           
             WikiCharacters.insertMany(wikiCharacters)
         }
         if(existWikiHouses.length === 0){

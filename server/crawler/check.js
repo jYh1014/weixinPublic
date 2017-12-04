@@ -24,5 +24,5 @@ const validData = R.filter(
 )
 
 let IMDb = validData(IMDbData)
-console.log(IMDb)
+// console.log(IMDb)
 writeFileSync('./wikiCharacters.json',JSON.stringify(IMDb,null,2),'utf8')
