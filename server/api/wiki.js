@@ -7,9 +7,6 @@ import { signature ,redirect, oauth} from '../controllers/wechat'
 import WikiHouse from '../database/schema/wikiHouse'
 import WikiCharacter from '../database/schema/wikiCharacter'
 
-
-
- 
     export async function getHouses(){
         
         const data = await WikiHouse.find({}).populate({
