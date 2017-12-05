@@ -1,4 +1,4 @@
-import api from '../api/wechat'
+import api from '../api'
 import { parse as urlParse } from 'url'
 import { parse as queryParse } from 'querystring'
 import config from '../config'

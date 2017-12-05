@@ -1,36 +1,35 @@
 
 
 
-import Router from 'koa-router'
 import {controller, get, post} from '../decorator/router'
 import { signature ,redirect, oauth} from '../controllers/wechat'
 import WikiHouse from '../database/schema/wikiHouse'
 import WikiCharacter from '../database/schema/wikiCharacter'
-import * as api from '../api/wiki'
+import api from '../api'
 @controller('/wiki')
 
 export class WechatController {
     @get('/houses')
     async getHouses(ctx,next){
-       const data = await api.getHouses()
+       const data = await api.wiki.getHouses()
         
         ctx.body = {
             success: true,
             data: data
         }
     }
-    @get('/houses/:_id')
+    @get('/houses/:id')
     async getHouse(ctx,next){
     
         let { params } = ctx 
-        let { _id } = params
-        if(!_id){
-            return (ctx.body = {
+        let { id } = params
+        if(!id){
+            return ctx.body = {
                 success: false,
                 err: '_id is required'
-            })
+            }
         }
-        const data = await api.getHouse(_id)
+        const data = await api.wiki.getHouse(id)
         ctx.body = {
             success: true,
             data: data
@@ -40,7 +39,7 @@ export class WechatController {
     @get('/characters')
     async getCharacters(ctx,next){
         let { limit = 20 } = ctx.query
-        const data = await api.getCharacters(limit)
+        const data = await api.wiki.getCharacters(limit)
         // console.log(data)
         ctx.body = {
             success: true,
@@ -58,7 +57,7 @@ export class WechatController {
                 err: '_id is required'
             })
         }
-        const data = await api.getCharacter(_id)
+        const data = await api.wiki.getCharacter(_id)
         ctx.body = {
             success: true,
             data: data
