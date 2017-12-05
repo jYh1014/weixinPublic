@@ -12,7 +12,7 @@
         img(v-else src='~static/img/user-selected.png')
       p {{item.text}}
 </template>
-<<script>
+<script>
   export default {
     data () {
       return {
@@ -48,8 +48,8 @@
       
     }
   }
-</script>>
-<<style lang='sass' src='../static/sass/nav.sass'>
+</script>
+<style lang='sass' src='../static/sass/nav.sass'>
 
 </style>
->
+
