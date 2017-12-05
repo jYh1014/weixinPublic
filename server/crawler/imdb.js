@@ -28,13 +28,13 @@ export const getIMDBCharacters = async () => {
         let character = $(this).find('td.character a:first-child')
 
         let name = character.text()
-        console.log(name)
+        // console.log(name)
         let chId = character.attr('href')
         photos.push({
             nmId,chId,name,playedBy
         })
     }) 
-    console.log('拿到' + photos.length)
+    // console.log('拿到' + photos.length)
     let fn = R.compose(
         R.map((photo) => {
             const reg1 = /\/name\/(.*?)\/\?ref/
@@ -48,7 +48,7 @@ export const getIMDBCharacters = async () => {
         R.filter(photo => photo.playedBy && photo.name && photo.chId && photo.nmId && photo.chId !== '#' && photo.nmId !== '#')
     )
     photos = fn(photos)
-    console.log('筛选后剩余' + photos.length)
+    // console.log('筛选后剩余' + photos.length)
     writeFileSync('./imdb.json',JSON.stringify(photos,null,2),'utf8')
 }
 // getIMDBChatacters()
@@ -70,13 +70,13 @@ const fetchIMDbProfile = async (url) => {
  
 export const getIMDbProfile = async () => {
     const characters = require(resolve(__dirname,'../../wikiCharacters.json'))
-    console.log(characters.length)
+    // console.log(characters.length)
     for(let i = 0; i<characters.length; i++){
         if(!characters[i].profile){
             let url = `http://www.imdb.com/name/${characters[i].nmId}/`
-            console.log('正在爬去' + characters[i].name)
+            // console.log('正在爬去' + characters[i].name)
             let src = await fetchIMDbProfile(url)
-            console.log('已经爬到' + src)
+            // console.log('已经爬到' + src)
             characters[i].profile = src
             writeFileSync('./imdbCharacters.json',JSON.stringify(characters,null,2),'utf8')
             await sleep(500)
@@ -92,7 +92,7 @@ const checkIMDbProfile = () => {
             newCharacters.push(item)
         }
     })
-    console.log(newCharacters.length)
+    // console.log(newCharacters.length)
     writeFileSync('./validCharacters.json',JSON.stringify(newCharacters,null,2),'utf8')
 }
 // checkIMDbProfile()
@@ -106,7 +106,7 @@ const fetchIMDbImage = async (url) => {
     let img = $('.article .media_index_thumb_list a img')
     img.each(function(){
         let src = $(this).attr('src')
-        console.log(src)
+        // console.log(src)
         if(src){
             src = src.split('_V1').shift()
             src += '_V1.jpg'
@@ -123,9 +123,9 @@ export const getIMDbImages = async () => {
     for(let i = 0; i<characters.length; i++){
         if(!characters[i].images){
             let url = `http://www.imdb.com/title/${characters[i].chId}`
-            console.log('正在爬去' + characters[i].name)
+            // console.log('正在爬去' + characters[i].name)
             let images = await fetchIMDbImage(url)
-            console.log('已经爬到' + images)
+            // console.log('已经爬到' + images)
             characters[i].images = images
             writeFileSync('./fullCharacters.json',JSON.stringify(characters,null,2),'utf8')
             await sleep(500)
@@ -141,7 +141,7 @@ const checkIMDbImages = () => {
             newCharacters.push(item)
         }
     })
-    console.log(newCharacters.length)
+    // console.log(newCharacters.length)
     writeFileSync('./endCharacters.json',JSON.stringify(newCharacters,null,2),'utf8')
 }
 checkIMDbImages()

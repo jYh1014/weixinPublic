@@ -5,7 +5,7 @@
   "author": "jiangying <3200371428@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
+    "dev": "node ./start.js",
     "build": "nuxt build && backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "precommit": "npm run lint",

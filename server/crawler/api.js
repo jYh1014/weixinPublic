@@ -12,9 +12,9 @@ export const getAPIChatacters = async (page = 1) => {
     let body = await rp(url)//string
     body = JSON.parse(body)
     characters = _.union(characters, body)
-    console.log('现有' + characters.length + '条数据')
+    // console.log('现有' + characters.length + '条数据')
     if(body.length < 50){
-        console.log('爬完了')
+        // console.log('爬完了')
         return
     }else {
         writeFileSync('./characters.json',JSON.stringify(characters,null,2),'utf8')

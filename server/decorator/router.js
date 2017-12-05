@@ -23,7 +23,7 @@ export default class Route {
             let prefixPath = conf.target[symbolPrefix]
             if(prefixPath) prefixPath = normalizePath(prefixPath)
             const routerPath = prefixPath + conf.path
-            console.log(routerPath)
+            // console.log(routerPath)
             this.router[conf.method](routerPath, ...controllers)
             this.app.use(this.router.routes())
             this.app.use(this.router.allowedMethods())
@@ -40,7 +40,7 @@ export const router = conf => (target, key, desc) => {
 }
 export const controller = path => {
     // console.log(path)
-   return target =>{target.prototype[symbolPrefix] = path;console.log(target.prototype)}
+   return target =>{target.prototype[symbolPrefix] = path}
 }
 //  console.log(controller)
 export const get = path => router({

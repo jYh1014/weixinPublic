@@ -1,6 +1,7 @@
 <template lang='pug'>
   .container
     .house-media
+        img(v-if='house.cname' :src='house.cname')
         .desc
             .words {{house.words}}
             .name {{house.name}}
@@ -9,10 +10,10 @@
         .body {{house.intro}}
         .title 主要角色
         .body(v-for='(item ,index) in house.swornMembers' :key='index')
-            .members
-             img(:src='item.profile')
+            .members(v-if='item.character')
+             img(:src='item.character.profile' @click='showCharacter(item)')
              .desc
-                .cname {{item.cname}}
+                .cname {{item.character.cname}}
                 .intro {{item.text}}
     .house-history(v-for='(item,index) in house.sections' :key='index')
         .title {{item.title}}
@@ -34,6 +35,15 @@ export default {
   beforeCreate(){
       let id = this.$route.query.id
       this.$store.dispatch('showHouse',id)
+  },
+  methods: {
+      showCharacter(item){
+          console.log(item)
+          this.$router.push({
+            path: '/character',
+            query: {id: item.character._id}
+            })
+      }
   }
 }
 </script>

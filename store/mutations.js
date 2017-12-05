@@ -19,6 +19,7 @@ export default {
         state.cities = cities
     },
     [types.SHOW_HOUSE](state,house){
+        // console.log(house)
         if(house._id === state.currentHouse._id) {
             return
         }

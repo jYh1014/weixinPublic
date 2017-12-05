@@ -100,7 +100,7 @@ export const getWikiCharacters = async () => {
 export const fetchImageFromIMDb = async () => {
     let IMDbCharacters = require(resolve(__dirname,'../../finalCharacters.json'))
     // console.log(IMDbCharacters.length)
-    // IMDbCharacters = [IMDbCharacters[0],IMDbCharacters[1]]
+    // IMDbCharacters = [IMDbCharacters[1]]
     IMDbCharacters = R.map(async item => {
         let key = `${item.nmId}/${randomToken(32)}`
         await fetchImage(item.profile, key)
@@ -114,8 +114,8 @@ export const fetchImageFromIMDb = async () => {
         return item
     })(IMDbCharacters)
     IMDbCharacters = await Promise.all(IMDbCharacters)
-    console.log(IMDbCharacters)
-    writeFileSync('./completeCharacters.json',JSON.stringify(IMDbCharacters,null,2),'utf8')
+    // console.log(IMDbCharacters)
+    writeFileSync('./newcompleteCharacters.json',JSON.stringify(IMDbCharacters,null,2),'utf8')
     
 }
 // fetchImageFromIMDb()
@@ -180,7 +180,7 @@ const HOUSES = [
 
 export const getSwornMembers = async => {
     let houses = require(resolve(__dirname, '../../wikiHouses.json'))
-    let characters = require(resolve(__dirname, '../../completeCharacters.json'))
+    let characters = require(resolve(__dirname, '../../finalCharacters.json'))
     let findSwornMembers = R.map(
         R.compose(
             i => _.reduce(i, (acc, item) => {
@@ -218,4 +218,4 @@ export const getSwornMembers = async => {
     writeFileSync('./completeHouses.json',JSON.stringify(houses,null,2), 'utf8')
     
 }
-getSwornMembers()
+// getSwornMembers()
