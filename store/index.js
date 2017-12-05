@@ -16,7 +16,9 @@ const debug = process.env.NODE_ENV !== 'production'
 // console.log(debug)
 const createStore = () => {
     return new Vuex.Store({
+      
       state:{
+        imageCDN: 'http://p09zoo0r0.bkt.clouddn.com/',
         houses:[],characters:[],cities:[],currentCharacter:{},currentHouse:{},products:[],user:'',currentProduct:[]  
       },
         actions,

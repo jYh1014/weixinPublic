@@ -20,7 +20,7 @@ export default {
     async fetchHouses({commit}){
         let res = await Services.fetchHouses()
         // console.log(res)
-        await commit(types.FETCH_HOUSES,res.data[0].data)
+        await commit(types.FETCH_HOUSES,res.data.data)
         // state.houses = res.data.data
         return res
     },

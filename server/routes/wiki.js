@@ -16,6 +16,7 @@ export class WechatController {
             path: 'swornMember.character',
             select: '_id name cname profile'
         }).exec()
+        console.log(houses)
         ctx.body = {
             success: true,
             data: houses
@@ -26,10 +27,10 @@ export class WechatController {
         let { params } = ctx
         let { _id } = params
         if(!_id){
-            return ctx.body = {
+            return (ctx.body = {
                 success: false,
                 err: '_id is required'
-            }
+            })
         }
         let house = await WikiHouse.findOne({
             _id: _id

@@ -11,29 +11,31 @@ class Services {
         return axios.get(`${baseUrl}/wechat-oauth?url=${url}`)        
     }
     fetchHouses(){
-        return axios.get(`${apiUrl}/wiki/houses`)
+        return axios.get(`${baseUrl}/wiki/houses`)
     }
     fetchCharacters(){
-        return axios.get(`${apiUrl}/wiki/characters`)
+        // return axios.get(`${apiUrl}/wiki/characters`)
+        return {data: {data:[]},success:true}
     }
     fetchCities(){
-        return axios.get(`${apiUrl}/wiki/cities`)
+        // return axios.get(`${apiUrl}/wiki/cities`)
+        return {data: {data:[]},success:true}
     }
     fetchHouse(id){
-        return axios.get(`${apiUrl}/wiki/houses/${id}`)
+        return axios.get(`${baseUrl}/wiki/houses/${id}`)
     }
     fetchCharacter(id){
-        return axios.get(`${apiUrl}/wiki/characters/${id}`)
+        return axios.get(`${baseUrl}/wiki/characters/${id}`)
     }
     fetchProducts(){
-        return axios.get(`${apiUrl}/wiki/products`)
+        return axios.get(`${baseUrl}/wiki/products`)
     }
     showProduct(id){
       
-        return axios.get(`${apiUrl}/wiki/products/${id}`)
+        return axios.get(`${baseUrl}/wiki/products/${id}`)
     }
     fetchUserAndOrders(){
-        return axios.get(`${apiUrl}/api/user`)
+        return axios.get(`${baseUrl}/api/user`)
     }
 }
 export default new Services()

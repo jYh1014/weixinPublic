@@ -6,6 +6,8 @@
           .words {{item.words}}
           .cname {{item.cname}}
           .name {{item.name}}
+        .house-flag
+          img(:src='imageCDN + item.cname +".png"')
     .character
       .title 主要人物
       .section
@@ -32,7 +34,7 @@ import {mapState} from 'vuex'
       }
     },
     computed: {
-      ...mapState(['houses','characters','cities'])
+      ...mapState(['houses','characters','cities','imageCDN'])
     },
     methods: {
       showHouse(item){
