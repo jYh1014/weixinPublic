@@ -48,5 +48,8 @@ export default {
     [types.FETCH_USERANDORDER](state,user){
           
         state.user = user
+    },
+    SET_USER: (state,user) => {
+        state.user = user
     }
 }

@@ -4,6 +4,25 @@ import axios from 'axios'
 // import getWechatSignature from './mutations'
 
 export default {
+    nuxtServerInit({ commit },{req}){
+        let user
+        if(req.session && req.session.user){
+            const {email,nickname,avatarUrl} = req.session.user
+            user = {email,nickname,avatarUrl}
+        }
+        commit('SET_USER',user)
+    },
+    async login({ commit },{email,password}){
+        let res = await axios.post('/admin/login',{email,password})
+        let { data } = res
+        if(data.success){
+            commit('SET_USER',data.data)
+        }
+    },
+    async logout({ commit }){
+        await axios.post('/admin/logout')
+        commit('SET_USER',null)
+    },
     getWechatSignature({ commit },url){
         // return new Promise((resolve, reject) => {
         //     commit(types.GETWECHAT_SIGNATURE, url)

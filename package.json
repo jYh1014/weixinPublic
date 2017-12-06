@@ -42,6 +42,7 @@
     "glob": "^7.1.2",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0",
+    "koa-session": "^5.5.1",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.3",
     "node-sass": "^4.7.2",
