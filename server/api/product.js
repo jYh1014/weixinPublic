@@ -32,8 +32,8 @@ import Product from '../database/schema/product'
          product = await product.save()
          return product   
     }
-    export async function save(product){
-        
+    export async function del(product){
+        console.log(product)
          product = await product.remove()
          return product   
     }

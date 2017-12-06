@@ -17,17 +17,19 @@
                          img(:src='image')
                     td {{item.title}}
                     td {{item.price}}
-                    td {{v-html='item.intro'}}
+                    td(v-html='item.intro')
                     td 
                         p(v-for='parameter in item.parameters') {{parameter.key}} {{parameter.value}}
                     td
                         button.btn(@click='editProduct(item)') 
-                           .materal-icon edit
+                           .material-icon edit
+                        button.btn(@click='deleteProduct(item)') 
+                           .material-icon delete
     .edit-product(:class='{active: editing}')
         .edit-header
-            .materal-icon edit
+            .material-icon edit
             div(style='flex:1')
-                .materal-icon(@click='editing =! editing') close
+                .material-icon(@click='editing =! editing') close
         .edit-body
             .form.edit-form
                 .input-group
@@ -46,16 +48,16 @@
                             input(v-model='item.key',placeholder='名称')
                             input(v-model='item.value',placeholder='值')
                             .remove(@click='removeParameter(index)')
-                                .materal-icon remove
+                                .material-icon remove
         .edit-footer
             button.btn.save(@click='saveEdited',v-if='!isProduct') 创建宝贝
             button.btn.save(@click='saveEdited',v-if='isProduct') 保存修改
             .btn.add-parameter(@click='addParameter')
-                .materal-icon add | 添加参数
+                .material-icon add | 添加参数
     .float-btn(@click='createProduct')
-        .materal-icon
-    v-snackbar(:open.sync='openSnackbar')
-        span(slot='body') 保存成功
+      .material-icon add
+    v-snackbar.spinner-content(:open.sync='openSnackbar')
+      span(slot='body') 保存成功
 
 </template>
 <script type='text/javascript'>
@@ -70,7 +72,7 @@ export default {
     },
     data(){
         return {
-            idProduct: false,
+            isProduct: false,
             openSnackbar: false,
             edited: {
                 images: [],
@@ -82,9 +84,10 @@ export default {
     async created(){
         this.$store.dispatch('fetchProducts')
     },
-    computed: {
-        ...mapState(['imageCDN','products'])
-    },
+    computed: mapState([
+    'imageCDN',
+    'products'
+  ]),
     methods: {
         editedIntro(e){
             let html = e.target.value
@@ -97,6 +100,9 @@ export default {
             this.editing = true
 
         },
+        async deleteProduct(item){
+            await this.$store.dispatch('deleteProduct',item)
+        },
         createProduct(){
             this.edited = {
                 images: [],
@@ -107,11 +113,12 @@ export default {
 
         },
         async saveEdited(){
-            this.idProduct
+            console.log(this.edited)
+            this.isProduct
             ?await this.$store.dispatch('putProduct',this.edited)
             :await this.$store.dispatch('saveProduct',this.edited)
             this.openSnackbar = true
-            this.idProduct = false
+            this.isProduct = false
             this.edited = {
                 images: [],
                 parameters: []
@@ -133,9 +140,7 @@ export default {
     }
 }
 </script>
-<<style scoped src='../static/sass/admin.sass'>
+<style lang='sass' src='../../static/sass/admin.sass'>
 
 </style>
-
-
 

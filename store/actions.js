@@ -1,5 +1,6 @@
 import Services from './services'
 import * as types from './mutation-types'
+import axios from 'axios'
 // import getWechatSignature from './mutations'
 
 export default {
@@ -69,5 +70,25 @@ export default {
         // console.log(res)
         await commit(types.FETCH_USERANDORDER,res.data.data)
         return res
+    },
+    async saveProduct({dispatch},product){
+        console.log(product)
+        await axios.post('/api/products',product)
+        let res = await dispatch('fetchProducts')
+        return res.data.data
+    },
+    async putProduct({dispatch},product){
+        
+        await axios.put('/api/products',product)
+        let res = await dispatch('fetchProducts')
+        
+        return res.data.data
+    },
+    async deleteProduct({dispatch},product){
+       
+        await axios.delete(`/api/products/${product._id}`)
+        let res = await dispatch('fetchProducts')
+        
+        return res.data.data
     }
 }

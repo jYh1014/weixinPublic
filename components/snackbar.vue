@@ -17,6 +17,7 @@ export default {
   watch: {
     'open': function (newVal, oldVal) {
       if (newVal) {
+        console.log(newVal)
         var timer = setTimeout(() => {
           this.$emit('update:open', false)
           clearTimeout(timer)
@@ -27,4 +28,4 @@ export default {
 }
 </script>
 
-<style lang="sass" src='~static/sass/snackbar.sass'></style>
+<style scoped lang="sass" src='../static/sass/snackbar.sass'></style>

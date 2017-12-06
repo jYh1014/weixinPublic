@@ -6,7 +6,7 @@ import WikiCharacter from '../database/schema/wikiCharacter'
 import api from '../api'
 import xss from 'xss'
 import R from 'ramda'
-@controller('/product')
+@controller('/api')
 
 export class ProductController {
     @get('/products')
@@ -58,8 +58,8 @@ export class ProductController {
             data: product
         }
     }
-    @put('/product/:_id')
-    async postProduct(ctx,next){
+    @put('/products')
+    async putProduct(ctx,next){
         let body = ctx.request.body     
         let { _id } = body
         if(!_id){
@@ -93,18 +93,25 @@ export class ProductController {
         
     }
 
-    @del('/product/:_id')
+    @del('/products/:_id')
     async delProduct(ctx,next){
-        let body = ctx.request.body     
-        let { _id } = body
+        let params = ctx.params   
+        let { _id } = params
+        console.log(_id)
         if(!_id){
+            return (ctx.body = {
+                success: false,
+                err: '_id is required'
+            })
+        }
+        let product = await api.product.getProduct(_id)
+        if(!product){
             return (ctx.body = {
                 success: false,
                 err: 'product not exist'
             })
         }
-       
-        let product = api.product.del(_id)
+        await api.product.del(product)
         ctx.body = {
             success: true,
         }

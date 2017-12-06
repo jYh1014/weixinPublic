@@ -27,7 +27,7 @@ const createStore = () => {
         modules: {
           // user
         },
-        strict: debug,
+        
         plugins: debug ? [createLogger()] : []
       })
 } 

@@ -1,18 +1,21 @@
 <template lang='pug'>
-  nav#nav(v-if='navVisible')
-    nuxt-link(v-for='(item,index) in navList' :key='index' :to='item.path')
-      div(v-if='index === 0')
-        img(v-if='activeRoute !== item.name' src='~static/img/home.png')
-        img(v-else src='~static/img/home-selected.png')
-      div(v-else-if='index === 1')
-        img(v-if='activeRoute !== item.name' src='~static/img/shopping.png')
-        img(v-else src='~static/img/shopping-selected.png')
-      div(v-else)
-        img(v-if='activeRoute !== item.name' src='~static/img/user.png')
-        img(v-else src='~static/img/user-selected.png')
-      p {{item.text}}
+  header
+    .menu
+        span.material-icon menu
 </template>
 
-<style lang='sass' src='../static/sass/nav.sass'>
+<style lang='sass'>
+header
+    height: 56px
+    width: 100%
+    background-color: #ff6600
+    color: #fff
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.14)
+    display: flex
+    align-items: center
+    .menu
+        cursor: pointer
+        margin-left: 20px
+        font-size: 26px
 
 </style>

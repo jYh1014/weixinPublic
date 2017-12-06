@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang='sass'>
-#conatiner
-    display: flex
+#container
+    display: flex 
 
 </style>
