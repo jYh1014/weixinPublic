@@ -4,11 +4,11 @@
         .swiper(v-swiper='swiperConfig' v-if='product.images')
             .swiper-wrapper
                 .swiper-slide(v-for='item in product.images')
-                    img(:src='item')
+                    img(:src='imageCDN+item')
             .swiper-pagination.swiper-pagination-bullets
         .content(v-if='product.price')
-            span.main-price {{product.price.toFixed(2)-product.price.toFixed(2).substr(-3)}}
-            span.other-price {{product.price.toFixed(2).substr(-3)}}
+            span.main-price {{Number(product.price).toFixed(2)-Number(product.price).toFixed(2).substr(-3)}}
+            span.other-price {{Number(product.price).toFixed(2).substr(-3)}}
         .intro {{product.intro}}
         .info
             cell(v-for='(item,index) in product.parameters' :key='index' :title='item.key' :content='item.value')
@@ -42,7 +42,7 @@ export default {
   },
   
   computed: {
-      ...mapState({product:'currentProduct'})
+      ...mapState({product:'currentProduct',imageCDN:'imageCDN'})
   },
   methods: {
       buyProduct(item){

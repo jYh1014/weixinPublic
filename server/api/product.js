@@ -28,8 +28,9 @@ import Product from '../database/schema/product'
          return product   
     }
     export async function update(product){
-        
-         product = await product.save()
+        console.log(product)    
+         product = await product.save()  
+         
          return product   
     }
     export async function del(product){

@@ -1,11 +1,11 @@
 
 import {controller, get, post,del,put} from '../decorator/router'
 import { signature ,redirect, oauth} from '../controllers/wechat'
-import WikiHouse from '../database/schema/wikiHouse'
-import WikiCharacter from '../database/schema/wikiCharacter'
+import Product from '../database/schema/wikiHouse'
 import api from '../api'
 import xss from 'xss'
 import R from 'ramda'
+import qiniu from '../libs/qiniu'
 @controller('/api')
 
 export class ProductController {
@@ -60,7 +60,8 @@ export class ProductController {
     }
     @put('/products')
     async putProduct(ctx,next){
-        let body = ctx.request.body     
+        let body = ctx.request.body  
+        // console.log(body)   
         let { _id } = body
         if(!_id){
             return (ctx.body = {
@@ -68,6 +69,8 @@ export class ProductController {
                 err: 'product not exist'
             })
         }
+        let product = await api.product.getProduct(_id)
+        
         product.title = xss(body.title)
         product.price = xss(body.price)
         product.intro = xss(body.intro)
@@ -80,6 +83,7 @@ export class ProductController {
          )(body.parameters)
          try {
             product = await api.product.update(product)
+            // console.log(product)
             ctx.body = {
                 success: true,
                 data: product
@@ -116,5 +120,6 @@ export class ProductController {
             success: true,
         }
     }
+
     
 }

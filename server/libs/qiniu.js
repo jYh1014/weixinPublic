@@ -5,6 +5,16 @@ qiniu.conf.ACCESS_KEY = config.qiniu.AK
 qiniu.conf.SECRET_KET = config.qiniu.SK
 
 const bucket = 'weixin'
+export const uptoken = (key) => {
+    const options = {
+            scope: bucket,
+            expires: 7200
+          };
+    const mac = new qiniu.auth.digest.Mac(qiniu.conf.ACCESS_KEY, qiniu.conf.SECRET_KET);
+    var putPolicy = new qiniu.rs.PutPolicy(options);
+    var uploadToken=putPolicy.uploadToken(mac);
+    return uploadToken
+}
 export const fetchImage = async (url, key) => {
 
     // const mac = new qiniu.auth.digest.Mac(qiniu.conf.ACCESS_KEY, qiniu.conf.SECRET_KET);
