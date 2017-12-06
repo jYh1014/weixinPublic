@@ -28,6 +28,7 @@
     "babel-preset-latest-node": "^0.2.2",
     "babel-preset-stage-3": "^6.24.1",
     "backpack-core": "^0.3.0",
+    "bcrypt": "^1.0.3",
     "cheerio": "^1.0.0-rc.2",
     "ejs": "^2.5.7",
     "eslint": "^3.13.1",
