@@ -17,7 +17,7 @@ export default {
   watch: {
     'open': function (newVal, oldVal) {
       if (newVal) {
-        console.log(newVal)
+        
         var timer = setTimeout(() => {
           this.$emit('update:open', false)
           clearTimeout(timer)

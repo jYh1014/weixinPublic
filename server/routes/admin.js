@@ -12,6 +12,12 @@ export class AdminController {
         let data = await api.admin.login(email,password)
         let {user,match} = data
         if(match){
+            if(user.role !== 'admin'){
+                return (ctx.body = {
+                    success: true,
+                    err: '来错地方了'
+                })
+            }
             ctx.session.user = {
                 _id: user._id,
                 email: user.email,

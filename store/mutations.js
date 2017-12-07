@@ -50,6 +50,7 @@ export default {
         state.user = user
     },
     SET_USER: (state,user) => {
+        console.log(user)
         state.user = user
     }
 }

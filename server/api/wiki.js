@@ -40,7 +40,7 @@ import WikiCharacter from '../database/schema/wikiCharacter'
     }
 
     export async function getCharacter(_id){
-      console.log(_id)
+      
         let data = await WikiCharacter.findOne({
             _id: _id
         }).exec()

@@ -14,10 +14,12 @@ export default {
     },
     async login({ commit },{email,password}){
         let res = await axios.post('/admin/login',{email,password})
+        
         let { data } = res
         if(data.success){
             commit('SET_USER',data.data)
         }
+        return data
     },
     async logout({ commit }){
         await axios.post('/admin/logout')
@@ -46,7 +48,7 @@ export default {
     },
     async fetchCharacters({commit}){
         let res = await Services.fetchCharacters()
-        console.log(res)
+        
        await commit(types.FETCH_CHARACTERS,res.data.data)
         // state.characters = res.data.data
         return res
@@ -60,7 +62,7 @@ export default {
     async showHouse({commit},_id){
         
         let res = await Services.fetchHouse(_id)
-        console.log(res)
+        
         await commit(types.SHOW_HOUSE,res.data.data)
         return res
     },
@@ -91,7 +93,7 @@ export default {
         return res
     },
     async saveProduct({dispatch},product){
-        console.log(product)
+        
         await axios.post('/api/products',product)
         let res = await dispatch('fetchProducts')
         return res.data.data

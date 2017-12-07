@@ -5,7 +5,7 @@ import R from 'ramda'
 import { resolve } from 'path'
 import WikiCharacters from '../database/schema/wikiCharacter'
 import WikiHouses from '../database/schema/wikiHouse'
-// console.log(WikiCharacters)
+import User from '../database/schema/user'
 const models = resolve(__dirname,'../database/schema')
 
 // fs.readdirSync(models)
@@ -37,6 +37,19 @@ export const database = (app) => {
         }
         if(existWikiHouses.length === 0){
             WikiHouses.insertMany(wikiHouses)
+        }
+        let user = await User.findOne({
+            email: '3200371428@qq.com',
+            
+        })
+        if(!user){
+            console.log('写入admin')
+            user = new User({
+                email: '3200371428@qq.com',
+                password: '123456',
+                role: 'admin'
+            })
+            await user.save()
         }
     })
 

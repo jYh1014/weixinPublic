@@ -5,6 +5,7 @@ export const addBody = app => {
 }
 
 export const addSession = app => {
+    app.keys = ['got']
     const CONFIG = {
         key: 'koa:sess',
         maxAge: 86400000,

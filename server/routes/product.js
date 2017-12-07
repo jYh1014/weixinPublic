@@ -101,7 +101,7 @@ export class ProductController {
     async delProduct(ctx,next){
         let params = ctx.params   
         let { _id } = params
-        console.log(_id)
+        
         if(!_id){
             return (ctx.body = {
                 success: false,

@@ -50,7 +50,7 @@ export class WechatController {
     async getCharacter(ctx,next){
         let { params } = ctx
         let { _id } = params
-        console.log(_id)
+       
         if(!_id){
             return (ctx.body = {
                 success: false,

@@ -38,7 +38,7 @@ export default {
   },
   methods: {
       showCharacter(item){
-          console.log(item)
+          
           this.$router.push({
             path: '/character',
             query: {id: item.character._id}

@@ -162,7 +162,7 @@ export default {
             let res = await axios.get('/qiniu/token',{
                 params: {key: key}
             })
-            console.log(res)
+            
             return res.data.token
         },
         async uploadImg(e){
@@ -178,7 +178,7 @@ export default {
             // console.log(uptoken)
             // Uploader.QINIU_UPLOAD_URL = '//up-z0.qiniu.com'
             let uploader = new Uploader(file, uptoken)
-            console.log(uploader)
+           
             uploader.on('progress',() => {
                 let dashoffset = this.upload.dasharray*(1-uploader.percent)
                 this.upload.dashoffset = dashoffset
@@ -186,7 +186,7 @@ export default {
             let res = await uploader.upload()
 
             uploader.cancel()
-            console.log(res)
+            
             this.edited.images.push(res.key)
         
         },
