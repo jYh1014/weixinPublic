@@ -1,4 +1,6 @@
 import { getWechat , getOAuth} from '../wechat'
+import User from '../database/schema/user'
+
 let client = getWechat()
 export async function getSignatureAsync(url) {
     let data = await client.fetchAccessToken()
@@ -20,5 +22,31 @@ export async function getUserByCode(code){
     let oauth = getOAuth()
     let data =await oauth.fetchAccessToken(code)
     let user = await oauth.getUserInfo(data.access_token,data.openid)
-    return user
+    // console.log(user)
+    let existUser = await User.findOne({
+        openid: data.openid
+    }).exec()
+    // console.log(existUser)
+    if(!existUser){
+        let newUser = new User({
+            openid: user.openid,
+            nickname: user.nickname,
+            province: user.province,
+            country: user.country,
+            city: user.city,
+            sex: user.sex,
+            headimgurl: user.headimgurl
+        })
+        await newUser.save()
+    }
+    
+    return {
+        openid: user.openid,
+        nickname: user.nickname,
+        province: user.province,
+        country: user.country,
+        city: user.city,
+        sex: user.sex,
+        headimgurl: user.headimgurl
+    }
 }

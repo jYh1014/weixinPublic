@@ -18,19 +18,23 @@ export async function  signature(ctx,next) {
 export async function redirect(ctx,next){
     let target = config.SITE_ROOT_URL + '/oauth'
     let scope = 'snsapi_userinfo'
-    let {a,b} = ctx.query
-    let params = `${a}_${b}`
+    let {visit,id} = ctx.query
+
+    let params = id?`${visit}_${id}`: visit
     let url = api.wechat.getAuthorizeURL(scope,target,params)
     ctx.redirect(url)
 }
 export async function oauth(ctx,next){
+    
     let url = ctx.query.url
     url = decodeURIComponent(url)
     let urlObj = urlParse(url)
     let params = queryParse(urlObj.query)
+    
     let code = params.code
     let user = await api.wechat.getUserByCode(code)
-    // console.log(user)
+    
+    ctx.session.user = user
 
     ctx.body = {
         success:true,

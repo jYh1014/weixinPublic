@@ -20,6 +20,7 @@ const UserSchema = new Schema({
     gender: String,
     email: String,
     password: String,
+    headimgurl: String,
     hashed_password: String,
     loginAttempts: {
         type: Number,

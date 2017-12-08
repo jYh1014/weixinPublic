@@ -5,6 +5,7 @@ import axios from 'axios'
 
 export default {
     nuxtServerInit({ commit },{req}){
+        // console.log(12)
         let user
         if(req.session && req.session.user){
             const {email,nickname,avatarUrl} = req.session.user
@@ -38,6 +39,12 @@ export default {
         // })
             
         return Services.getUserByOAuth(url)
+    },
+    getWechatOAuth({ commit },url){
+        return Services.getWechatOAuth(url)
+    },
+    setAuthUser({ commit }, authUser){
+        commit('SET_AUTHUSER',authUser)
     },
     async fetchHouses({commit}){
         let res = await Services.fetchHouses()

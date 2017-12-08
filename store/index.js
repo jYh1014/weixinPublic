@@ -19,7 +19,7 @@ const createStore = () => {
       
       state:{
         imageCDN: 'http://p09zoo0r0.bkt.clouddn.com/',
-        houses:[],characters:[],currentCharacter:{},currentHouse:{},products:[],user:'',currentProduct:[]  
+        houses:[],characters:[],currentCharacter:{},currentHouse:{},products:[],user:null,authUser: null,currentProduct:[]  
       },
         actions,
         mutations,

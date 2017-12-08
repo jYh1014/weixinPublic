@@ -50,7 +50,10 @@ export default {
         state.user = user
     },
     SET_USER: (state,user) => {
-        console.log(user)
+       
         state.user = user
+    },
+    SET_AUTHUSER: (state, authUser) => {
+        state.authUser = authUser
     }
 }

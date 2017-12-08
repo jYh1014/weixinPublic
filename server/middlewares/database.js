@@ -25,7 +25,7 @@ export const database = (app) => {
         mongoose.connect(config.db)
     })
     mongoose.connection.on('error',(err) => {
-        console.log(err)
+        // console.log(err)
     })
     mongoose.connection.on('open',async () => {
         console.log('connetion db')
@@ -43,7 +43,7 @@ export const database = (app) => {
             
         })
         if(!user){
-            console.log('写入admin')
+            
             user = new User({
                 email: '3200371428@qq.com',
                 password: '123456',

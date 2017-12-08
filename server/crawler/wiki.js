@@ -35,7 +35,7 @@ const getWikiId = async data => {
     try {
         res = await rp(url)
     } catch (error) {
-        console.log(error)
+        // console.log(error)
     }
     res = JSON.parse(res)
     res = res.items[0]
@@ -50,7 +50,7 @@ const getWikiDetail = async data => {
     try {
         res = await rp(url)
     } catch (error) {
-        console.log(error)
+        // (error)
     }
     
     // console.log(typeof res)
