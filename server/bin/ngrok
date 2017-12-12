@@ -1,0 +1,2 @@
+#!/bin/bash
+./server/bin/natapp -authtoken=a3c1216173cf7a49
