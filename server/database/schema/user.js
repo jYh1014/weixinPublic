@@ -17,10 +17,11 @@ const UserSchema = new Schema({
     province: String,
     country: String,
     city: String,
-    gender: String,
+    sex: String,
     email: String,
     password: String,
     headimgurl: String,
+    avatarUrl: String,
     hashed_password: String,
     loginAttempts: {
         type: Number,

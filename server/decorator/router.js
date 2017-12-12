@@ -13,12 +13,14 @@ export default class Route {
         this.app = app
         this.apiPath = apiPath
         this.router = new Router()
+        // console.log(this.router)
     }
     init(){
+        
         glob.sync(resolve(this.apiPath, './*.js')).forEach(require)
         // console.log(routersMap)
         for(let [conf, controller] of routersMap){
-           
+        //    console.log(conf)
             const controllers = isArray(controller)
             // console.log(controllers)
             let prefixPath = conf.target[symbolPrefix]
@@ -34,6 +36,7 @@ export default class Route {
 }
 
 export const router = conf => (target, key, desc) => {
+    // console.log(conf)
     conf.path = normalizePath(conf.path)
     routersMap.set({
         target: target,...conf

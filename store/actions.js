@@ -26,6 +26,10 @@ export default {
         await axios.post('/admin/logout')
         commit('SET_USER',null)
     },
+    async createOrder({ commit },obj){
+        let {data} = Service.createOrder(obj)
+        return data
+    },
     getWechatSignature({ commit },url){
         // return new Promise((resolve, reject) => {
         //     commit(types.GETWECHAT_SIGNATURE, url)

@@ -21,6 +21,11 @@ class Services {
         return axios.get(`${baseUrl}/wiki/characters`)
         // return {data: {data:[]},success:true}
     }
+    createOrder({ productId,name,address,phoneNumber}){
+        return axios.post(`${baseUrl}/api/wechat-pay`,{
+            productId,name,address,phoneNumber
+        })
+    }
     // fetchCities(){
     //     // return axios.get(`${apiUrl}/wiki/cities`)
     //     return {data: {data:[]},success:true}

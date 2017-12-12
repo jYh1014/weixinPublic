@@ -9,5 +9,9 @@ export default {
     "qiniu": {
         "AK": 'wiD9TefQEAAcHHLsyBsqjKFMCTDQZyl0TnFxtTzV',
         "SK": 'w75AV3t7LAuDBJX-IsDhwFrLZ5hfuLDZsblsFZ9V'
+    },
+    "mina": {
+        appid: 'wx039c10a50cd3430f',
+        secret: '55035edc61f3f6ce55158fcff1208e16'
     }
 }

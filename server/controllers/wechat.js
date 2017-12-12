@@ -40,5 +40,4 @@ export async function oauth(ctx,next){
         success:true,
         data: user
     }
-
 }

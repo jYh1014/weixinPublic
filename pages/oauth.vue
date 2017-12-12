@@ -29,7 +29,6 @@ export default {
       await this.$store.dispatch('setAuthUser',data.data)
       let paramsArr = getUrlParam('state').split('_')
       let visit = paramsArr.length === 1?`/${paramsArr[0]}`:`${paramsArr[0]}?id=${paramsArr[i]}`
-      console.log(paramsArr)
       this.$router.replace(visit)
 
     }else {

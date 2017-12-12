@@ -22,7 +22,7 @@ export async function getUserByCode(code){
     let oauth = getOAuth()
     let data =await oauth.fetchAccessToken(code)
     let user = await oauth.getUserInfo(data.access_token,data.openid)
-    // console.log(user)
+    console.log(user.unionid)
     let existUser = await User.findOne({
         openid: data.openid
     }).exec()

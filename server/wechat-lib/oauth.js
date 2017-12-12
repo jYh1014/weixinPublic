@@ -19,7 +19,7 @@ export default class WechatOAuth {
         const response = await request(options)
         return response
     }
-     getAuthorizeURL(scope = 'snsapi_base',target,state){
+     getAuthorizeURL(scope = 'snsapi_userinfo',target,state){
          
         let url = `${api.authorize}appid=${this.appID}&redirect_uri=${encodeURIComponent(target)}&response_type=code&scope=${scope}&state=${state}#wechat_redirect `
         return url
