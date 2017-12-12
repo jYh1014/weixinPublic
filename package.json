@@ -19,7 +19,8 @@
     "qshell": "^0.2.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "source-map-support": "^0.4.15"
+    "source-map-support": "^0.4.15",
+    "vue-awesome-swiper": "^3.0.6"
   },
   "devDependencies": {
     "axios": "^0.17.1",

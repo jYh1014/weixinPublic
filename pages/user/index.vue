@@ -3,7 +3,7 @@
     .user(v-if='user')
         .user-header
             .text {{user.nickname}}
-            img(:src='user.avatar')
+            img(:src='user.avatarUrl')
         .user-address
             cell(title='收货地址')
             .user-content {{user.address}}
@@ -13,7 +13,7 @@
         .user-name
             cell(title='') 
             .user-content {{user.name}}
-        .user-order(v-if='user.orders.length> 0')
+        .user-order
             cell(title='我的订单')
             .items(v-for='(item,index) in user.orders' :key='index')
                 img(:src='item.image')
@@ -37,7 +37,13 @@ export default {
   },
   data(){
       return {
-          
+          user: {
+              name: '陈宝宝',
+              nickname: '皮皮猪',
+              address: '北京市',
+              phoneNumber: '12324'
+
+          }
       }
   },
   computed: {
